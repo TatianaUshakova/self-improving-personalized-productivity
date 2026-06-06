@@ -1,304 +1,285 @@
-import anthropic
-import subprocess
+#!/usr/bin/env python3
+"""
+Reference target agent for personalized daily activity reconstruction.
+
+This prototype:
+1. Loads one or more public day JSON files from --dataset_dir
+2. Builds 15-minute slot evidence from Chrome, location, calls, and todos
+3. Prompts moonshotai/Kimi-K2.6 via Nebius to reconstruct the day
+4. Saves submission.json and a richer timestamped result JSON
+5. Logs a single execution trajectory to agent_execution.json
+"""
+
+from __future__ import annotations
+
+import argparse
 import json
-from dotenv import load_dotenv
+import os
+from datetime import datetime
+from pathlib import Path
+from typing import Any
 
-load_dotenv()
+from openai import OpenAI
 
-client = anthropic.Anthropic()
-MODEL = "claude-haiku-4-5-20251001"
-
-# ── Tool definitions ──────────────────────────────────────────────────────────
-
-TOOLS = [
-    {
-        "name": "write_file",
-        "description": "Write (overwrite) a file with the given content.",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "path":    {"type": "string", "description": "File path to write"},
-                "content": {"type": "string", "description": "Content to write"},
-            },
-            "required": ["path", "content"],
-        },
-    },
-    {
-        "name": "read_file",
-        "description": "Read and return the contents of a file.",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "path": {"type": "string", "description": "File path to read"},
-            },
-            "required": ["path"],
-        },
-    },
-    {
-        "name": "bash",
-        "description": "Run a bash command and return stdout + stderr.",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "command": {"type": "string", "description": "Shell command to execute"},
-            },
-            "required": ["command"],
-        },
-    },
-]
-
-# ── Tool implementations ──────────────────────────────────────────────────────
-
-def write_file(path: str, content: str) -> str:
-    try:
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(content)
-        return f"Written {len(content)} characters to '{path}'."
-    except Exception as e:
-        return f"Error writing file: {e}"
+MODEL_NAME = "moonshotai/Kimi-K2.6"
+NEBIUS_BASE_URL = "https://api.tokenfactory.us-central1.nebius.com/v1/"
+MAX_TOKENS = 6000
 
 
-def read_file(path: str) -> str:
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return f.read()
-    except FileNotFoundError:
-        return f"Error: File '{path}' not found."
-    except Exception as e:
-        return f"Error reading file: {e}"
+def setup_client() -> OpenAI:
+    api_key = os.getenv("NEBIUS_API_KEY")
+    if not api_key:
+        raise SystemExit("Set NEBIUS_API_KEY environment variable.")
+    return OpenAI(api_key=api_key, base_url=NEBIUS_BASE_URL)
 
 
-def bash(command: str) -> str:
-    try:
-        result = subprocess.run(
-            command,
-            shell=True,
-            capture_output=True,
-            text=True,
-            timeout=30,
+def load_day_files(dataset_dir: Path) -> list[dict[str, Any]]:
+    day_files = sorted(dataset_dir.glob("day_*_public.json"))
+    if not day_files:
+        raise SystemExit(f"No day_*_public.json files found in {dataset_dir}")
+    return [json.loads(path.read_text(encoding="utf-8")) for path in day_files]
+
+
+def hhmm_to_minutes(value: str) -> int:
+    hour, minute = value.split(":")
+    return int(hour) * 60 + int(minute)
+
+
+def minutes_to_hhmm(value: int) -> str:
+    return f"{value // 60:02d}:{value % 60:02d}"
+
+
+def overlaps(start_a: int, end_a: int, start_b: int, end_b: int) -> bool:
+    return start_a < end_b and start_b < end_a
+
+
+def build_slot_index(day: dict[str, Any]) -> list[dict[str, Any]]:
+    work_started_at = day.get("user_context", {}).get("work_started_at", "09:00")
+    start_minute = hhmm_to_minutes(work_started_at)
+    end_minute = 24 * 60
+
+    slots = []
+    for slot_start in range(start_minute, end_minute, 15):
+        slot_end = min(slot_start + 15, end_minute)
+        slots.append(
+            {
+                "start": minutes_to_hhmm(slot_start),
+                "end": minutes_to_hhmm(slot_end),
+                "call_evidence": [],
+                "location_evidence": [],
+                "chrome_session_evidence": [],
+                "chrome_raw_event_count": 0,
+            }
         )
-        output = result.stdout
-        if result.stderr:
-            output += f"\n[stderr]\n{result.stderr}"
-        return output.strip() or "(no output)"
-    except subprocess.TimeoutExpired:
-        return "Error: Command timed out after 30 seconds."
-    except Exception as e:
-        return f"Error running command: {e}"
 
+    def attach_time_bounded(events: list[dict[str, Any]], target_key: str) -> None:
+        for event in events:
+            try:
+                event_start = hhmm_to_minutes(event["start"])
+                event_end = hhmm_to_minutes(event["end"])
+            except Exception:
+                continue
+            for slot in slots:
+                slot_start = hhmm_to_minutes(slot["start"])
+                slot_end = hhmm_to_minutes(slot["end"])
+                if overlaps(slot_start, slot_end, event_start, event_end):
+                    slot[target_key].append(event)
 
-def dispatch_tool(name: str, inputs: dict) -> str:
-    if name == "write_file":
-        return write_file(**inputs)
-    elif name == "read_file":
-        return read_file(**inputs)
-    elif name == "bash":
-        return bash(**inputs)
-    else:
-        return f"Unknown tool: {name}"
+    attach_time_bounded(day.get("call_activity", {}).get("events_rounded_15m", []), "call_evidence")
+    attach_time_bounded(day.get("location_activity", {}).get("events_rounded_15m", []), "location_evidence")
+    attach_time_bounded(day.get("chrome_activity", {}).get("merged_sessions", []), "chrome_session_evidence")
 
-
-# ── Multi-Trajectory Logger ───────────────────────────────────────────────────
-
-class MultiTrajectoryLogger:
-    """
-    Logger for tasks with multiple independent samples (e.g., GPQA with multiple questions).
-
-    For tasks where you need to process multiple independent items (questions, test cases,
-    samples), this logger saves each trajectory separately instead of one large file.
-
-    Usage:
-        logger = MultiTrajectoryLogger(working_dir)
-
-        for idx, question in enumerate(questions):
-            messages = []
-            messages.append({"role": "user", "content": question_prompt})
-
-            response = client.messages.create(...)
-            messages.append({"role": "assistant", "content": response.content})
-
-            # Save this trajectory
-            logger.log_trajectory(idx, messages)
-
-        logger.finalize(len(questions))
-    """
-
-    def __init__(self, working_dir: str):
-        """
-        Initialize the multi-trajectory logger.
-
-        Args:
-            working_dir: Path to the working directory where agent_execution/ will be created
-        """
-        import os
-        self.working_dir = working_dir
-        self.execution_folder = os.path.join(working_dir, "agent_execution")
-        os.makedirs(self.execution_folder, exist_ok=True)
-        print(f"Initialized multi-trajectory logger at: {self.execution_folder}")
-
-    def log_trajectory(self, trajectory_id: int, messages: list):
-        """
-        Save a complete trajectory for one sample.
-
-        Args:
-            trajectory_id: Index of this trajectory (0-based)
-            messages: List of message dicts (same format as Anthropic API messages)
-        """
-        import os
-        filename = f"execution_q{trajectory_id}.json"
-        filepath = os.path.join(self.execution_folder, filename)
-
+    for event in day.get("chrome_activity", {}).get("raw_events_normalized", []):
         try:
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(messages, f, indent=2, ensure_ascii=False)
-            print(f"  ✓ Saved trajectory {trajectory_id} to {filename}")
-        except Exception as e:
-            print(f"  ✗ Error saving trajectory {trajectory_id}: {e}")
+            event_start = hhmm_to_minutes(event["start"])
+            event_end = hhmm_to_minutes(event["end"])
+        except Exception:
+            continue
+        effective_end = max(event_start + 1, event_end)
+        for slot in slots:
+            slot_start = hhmm_to_minutes(slot["start"])
+            slot_end = hhmm_to_minutes(slot["end"])
+            if overlaps(slot_start, slot_end, event_start, effective_end):
+                slot["chrome_raw_event_count"] += 1
 
-    def finalize(self, total_count: int):
-        """
-        Log completion message.
-
-        Args:
-            total_count: Total number of trajectories saved
-        """
-        print(f"\n{'='*60}")
-        print(f"✓ Multi-trajectory logging complete:")
-        print(f"  - Total trajectories: {total_count}")
-        print(f"  - Saved to: {self.execution_folder}/")
-        print(f"  - Files: execution_q0.json to execution_q{total_count-1}.json")
-        print(f"{'='*60}\n")
+    return slots
 
 
-# ── Agent loop ────────────────────────────────────────────────────────────────
+def build_prompt_for_day(day: dict[str, Any]) -> tuple[str, list[dict[str, Any]]]:
+    slots = build_slot_index(day)
+    heuristics = day.get("user_context", {}).get("heuristics", [])
+    todos = [item["text"] for item in day.get("user_context", {}).get("todo_items", [])]
 
-def run_agent(task: str) -> None:
-    print(f"\n{'='*60}")
-    print(f"Task: {task}")
-    print('='*60)
+    prompt = {
+        "task": (
+            "Reconstruct the user's day as detailed 15-minute activity labels. "
+            "Preserve specific activity meaning. Avoid broad generic categories when more detail is justified."
+        ),
+        "date": day.get("date"),
+        "day_label": day.get("day_label"),
+        "work_started_at": day.get("user_context", {}).get("work_started_at"),
+        "todo_items": todos,
+        "heuristics": heuristics,
+        "slot_evidence": slots,
+        "required_output_schema": {
+            "date": "YYYY-MM-DD",
+            "slots_15m": [{"start": "HH:MM", "end": "HH:MM", "label": "detailed freeform description"}],
+            "segments": [{"start": "HH:MM", "end": "HH:MM", "label": "detailed freeform description"}],
+        },
+        "instructions": [
+            "Use cross-signal evidence across browsing, location, calls, todos, and heuristics.",
+            "Heuristics are weak hints, not labels to copy blindly.",
+            "If evidence is ambiguous, still make your best specific guess rather than using broad labels.",
+            "Return JSON only.",
+        ],
+    }
+    return json.dumps(prompt, indent=2, ensure_ascii=False), slots
 
-    messages = [{"role": "user", "content": task}]
 
-    while True:
-        response = client.messages.create(
-            model=MODEL,
-            max_tokens=4096,
-            tools=TOOLS,
-            messages=messages,
-        )
+def normalize_slots(slots: list[dict[str, Any]]) -> list[dict[str, str]]:
+    normalized = []
+    for slot in slots:
+        start = str(slot.get("start", "")).strip()
+        end = str(slot.get("end", "")).strip()
+        label = str(slot.get("label", "")).strip()
+        if start and end and label:
+            normalized.append({"start": start, "end": end, "label": label})
+    return normalized
 
-        # Collect any text the model emits this turn
-        for block in response.content:
-            if block.type == "text" and block.text.strip():
-                print(f"\nAssistant: {block.text}")
 
-        # Done – no more tool calls
-        if response.stop_reason == "end_turn":
-            break
-
-        # Handle tool calls
-        if response.stop_reason == "tool_use":
-            # Append assistant turn
-            messages.append({"role": "assistant", "content": response.content})
-
-            tool_results = []
-            for block in response.content:
-                if block.type == "tool_use":
-                    print(f"\n[Tool] {block.name}({json.dumps(block.input, ensure_ascii=False)})")
-                    result = dispatch_tool(block.name, block.input)
-                    print(f"[Result] {result[:200]}{'...' if len(result) > 200 else ''}")
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": result,
-                    })
-
-            messages.append({"role": "user", "content": tool_results})
+def build_segments_from_slots(slots: list[dict[str, str]]) -> list[dict[str, str]]:
+    if not slots:
+        return []
+    segments = [slots[0].copy()]
+    for slot in slots[1:]:
+        last = segments[-1]
+        if slot["label"] == last["label"] and slot["start"] == last["end"]:
+            last["end"] = slot["end"]
         else:
-            # Unexpected stop reason – bail out
-            print(f"Unexpected stop_reason: {response.stop_reason}")
-            break
-
-    print(f"\n{'='*60}\nDone.\n")
+            segments.append(slot.copy())
+    return segments
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
+def parse_response_json(raw_text: str) -> dict[str, Any]:
+    raw_text = raw_text.strip()
+    if raw_text.startswith("```"):
+        raw_text = raw_text.strip("`")
+        if raw_text.startswith("json"):
+            raw_text = raw_text[4:].strip()
+    try:
+        return json.loads(raw_text)
+    except json.JSONDecodeError:
+        start = raw_text.find("{")
+        end = raw_text.rfind("}")
+        if start != -1 and end != -1 and start < end:
+            return json.loads(raw_text[start : end + 1])
+        raise
 
-if __name__ == "__main__":
-    run_agent(
-        "Write a Python file called hello.py that prints 'Hello, World!', "
-        "then run it with bash and confirm the output is correct."
+
+def save_execution_log(path: Path, payload: list[dict[str, Any]]) -> None:
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+
+
+def run_one_day(client: OpenAI, day: dict[str, Any], working_dir: Path) -> dict[str, Any]:
+    user_prompt, slot_evidence = build_prompt_for_day(day)
+    system_prompt = (
+        "You reconstruct a user's day from noisy personal telemetry. "
+        "You must output detailed, specific activity labels in valid JSON."
+    )
+
+    trajectory: list[dict[str, Any]] = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.2,
+        max_tokens=MAX_TOKENS,
+        response_format={"type": "json_object"},
+    )
+
+    raw_text = (response.choices[0].message.content or "").strip()
+    trajectory.append(
+        {
+            "role": "assistant",
+            "content": raw_text,
+            "_meta": {
+                "date": day.get("date"),
+                "prompt_tokens": getattr(response.usage, "prompt_tokens", 0) if response.usage else 0,
+                "completion_tokens": getattr(response.usage, "completion_tokens", 0) if response.usage else 0,
+            },
+        }
+    )
+
+    parsed = parse_response_json(raw_text)
+    predicted_slots = normalize_slots(parsed.get("slots_15m", []))
+    if not predicted_slots:
+        raise ValueError("Model response did not contain valid slots_15m output.")
+
+    predicted_segments = normalize_slots(parsed.get("segments", []))
+    if not predicted_segments:
+        predicted_segments = build_segments_from_slots(predicted_slots)
+
+    result = {
+        "date": day.get("date"),
+        "slots_15m": predicted_slots,
+        "segments": predicted_segments,
+        "slot_count": len(predicted_slots),
+        "source_summary": {
+            "slot_evidence_count": len(slot_evidence),
+            "todo_count": len(day.get("user_context", {}).get("todo_items", [])),
+        },
+        "total_input_tokens": getattr(response.usage, "prompt_tokens", 0) if response.usage else 0,
+        "total_output_tokens": getattr(response.usage, "completion_tokens", 0) if response.usage else 0,
+        "total_reasoning_tokens": 0,
+        "total_cost_usd": 0.0,
+        "timestamp": datetime.now().isoformat(),
+    }
+
+    save_execution_log(working_dir / "agent_execution.json", trajectory)
+    return result
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Personalized productivity breakdown reference agent")
+    parser.add_argument("--dataset_dir", type=Path, required=True, help="Path to the READ-ONLY dataset directory")
+    parser.add_argument("--working_dir", type=Path, required=True, help="Path to the READ-WRITE working directory")
+    args = parser.parse_args()
+
+    dataset_dir = args.dataset_dir
+    working_dir = args.working_dir
+    working_dir.mkdir(parents=True, exist_ok=True)
+    results_dir = working_dir / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    day_files = load_day_files(dataset_dir)
+    client = setup_client()
+
+    if len(day_files) != 1:
+        raise SystemExit("This reference agent currently expects exactly one day_*_public.json file.")
+
+    result = run_one_day(client, day_files[0], working_dir)
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = results_dir / f"submission_{result['date']}_{timestamp}.json"
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    with open(results_dir / "submission.json", "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    print(
+        f"saved {output_file} | "
+        f"prompt_tokens={result['total_input_tokens']} | "
+        f"completion_tokens={result['total_output_tokens']}"
     )
 
 
-# ── Multi-Trajectory Usage Example ────────────────────────────────────────────
-"""
-USAGE EXAMPLE: Multi-Trajectory Logging for GPQA-style tasks
-
-For tasks with multiple independent questions/samples (like GPQA with 198 questions),
-use MultiTrajectoryLogger instead of saving to a single agent_execution.json file.
-
-Example implementation:
-
-    import argparse
-    import os
-
-    # Parse command-line arguments
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_dir', required=True)
-    parser.add_argument('--working_dir', required=True)
-    args = parser.parse_args()
-
-    # Initialize multi-trajectory logger
-    logger = MultiTrajectoryLogger(args.working_dir)
-
-    # Load dataset (e.g., GPQA questions)
-    questions_file = os.path.join(args.dataset_dir, "diamond_qna.json")
-    with open(questions_file) as f:
-        questions = json.load(f)
-
-    # Process each question independently
-    for idx, question_data in enumerate(questions):
-        print(f"\\nProcessing question {idx+1}/{len(questions)}...")
-
-        # Build conversation for this question
-        messages = []
-        messages.append({
-            "role": "user",
-            "content": f"Question: {question_data['question']}\\nChoices: {question_data['choices']}"
-        })
-
-        # Get response from Claude
-        response = client.messages.create(
-            model=MODEL,
-            max_tokens=1000,
-            messages=messages
-        )
-
-        # Add response to messages
-        messages.append({
-            "role": "assistant",
-            "content": response.content
-        })
-
-        # Save this trajectory
-        logger.log_trajectory(idx, messages)
-
-    # Finalize logging
-    logger.finalize(len(questions))
-
-This creates:
-    working_dir/agent_execution/execution_q0.json
-    working_dir/agent_execution/execution_q1.json
-    ...
-    working_dir/agent_execution/execution_q197.json
-
-Instead of a single large:
-    working_dir/agent_execution.json
-
-Benefits:
-- Each trajectory is isolated and independently parseable
-- Easier to debug specific questions
-- Better for large datasets (no single huge file)
-- Feedback agent can analyze patterns across trajectories
-"""
+if __name__ == "__main__":
+    main()
