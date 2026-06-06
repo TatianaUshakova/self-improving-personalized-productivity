@@ -11,6 +11,11 @@ SIA is a Self Improving AI framework to autonomously improve the performance of 
 
 > **Just want to try it?** Skip to [Run SIA locally](#2-run-sia-locally-with-built-in-tasks).
 
+## Introduction Videos
+
+- [SIA setup](https://www.loom.com/share/be0534bc818d408bab937033c6457ec9)
+- [SIA Runs Visualizer](https://www.loom.com/share/5b1dc2dc858b4493b4b348f0b88d5b9e)
+
 ### Architecture
 
 <p align="center"><img src="docs/flow.png" alt="SIA orchestration flow" width="720"></p>
