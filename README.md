@@ -45,7 +45,7 @@ This iterative process allows the system to autonomously refine and enhance its 
 
 ## Run SIA locally with built-in tasks
 
-SIA ships with four built-in tasks: `gpqa`, `lawbench`, `longcot-chess`, `spaceship-titanic`.
+SIA ships with five built-in tasks: `gpqa`, `lawbench`, `longcot-chess`, `productivity-breakdown`, `spaceship-titanic`.
 
 ### Install
 
@@ -82,7 +82,7 @@ The CLI has two sub-commands: **`sia run`** (the self-improvement loop) and
 sia run --task gpqa --max_gen 5 --run_id 1
 ```
 
-Swap `--task` for any of the four bundled tasks. (`sia --task ...` without the
+Swap `--task` for any of the five bundled tasks. (`sia --task ...` without the
 `run` sub-command still works and is treated as `sia run ...`.)
 
 Artifacts land in `runs/run_{run_id}/gen_{n}/`:
@@ -235,7 +235,7 @@ the self-improvement loop optimizes against.
 4. Those metrics are injected into the feedback prompt and surfaced in `context.md`
    and the [web dashboard](#visualize-runs) (accuracy-across-generations chart, per-domain breakdown).
 
-The four bundled tasks already ship an evaluator. For a **custom task**, drop an
+Many bundled benchmark tasks ship an evaluator. For a **custom or experimental task**, drop an
 `evaluate.py` exposing an `evaluate()` function into `data/public/` — it decides the
 submission format, compares against `data/private/`, and returns a metrics dict.
 Test it standalone before a full run:
