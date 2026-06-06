@@ -1,0 +1,95 @@
+{
+  "source_file": "location.md",
+  "source_language": "mixed",
+  "normalization": {
+    "language": "English",
+    "time_rounding": "nearest_15_minutes",
+    "event_type": "location_activity"
+  },
+  "notes": [
+    "These records mix observed location and movement with some ambiguous shorthand.",
+    "One item says 'up to 1pm home' without a clear start time, so it is retained as a contextual note rather than a bounded segment.",
+    "Google Maps may sometimes represent planning behavior rather than actual movement, as noted in user heuristics."
+  ],
+  "context_only": [
+    {
+      "text": "up to 1pm home"
+    }
+  ],
+  "events_original": [
+    {
+      "start": "14:50",
+      "end": "15:30",
+      "type": "travel",
+      "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:30",
+      "end": "17:30",
+      "type": "visit",
+      "description": "visited _startup_location_ in Oakland"
+    },
+    {
+      "start": "17:30",
+      "end": "18:00",
+      "type": "travel",
+      "description": "traveled from Oakland to Trader Joe's"
+    },
+    {
+      "start": "18:00",
+      "end": "18:30",
+      "type": "travel",
+      "description": "traveled from Trader Joe's to Corgi Coffee"
+    },
+    {
+      "start": "19:30",
+      "end": "20:00",
+      "type": "travel",
+      "description": "traveled from Corgi Coffee to Trellis coworking"
+    },
+    {
+      "start": "24:00",
+      "end": "24:30",
+      "type": "travel",
+      "description": "traveled from Trellis coworking to home"
+    }
+  ],
+  "events_rounded_15m": [
+    {
+      "start": "14:45",
+      "end": "15:30",
+      "type": "travel",
+      "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:30",
+      "end": "17:30",
+      "type": "visit",
+      "description": "visited _startup_location_ in Oakland"
+    },
+    {
+      "start": "17:30",
+      "end": "18:00",
+      "type": "travel",
+      "description": "traveled from Oakland to Trader Joe's"
+    },
+    {
+      "start": "18:00",
+      "end": "18:30",
+      "type": "travel",
+      "description": "traveled from Trader Joe's to Corgi Coffee"
+    },
+    {
+      "start": "19:30",
+      "end": "20:00",
+      "type": "travel",
+      "description": "traveled from Corgi Coffee to Trellis coworking"
+    },
+    {
+      "start": "24:00",
+      "end": "24:30",
+      "type": "travel",
+      "description": "traveled from Trellis coworking to home"
+    }
+  ]
+}

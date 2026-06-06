@@ -1,0 +1,37 @@
+{
+  "source_file": "call_activity.md",
+  "source_language": "ru",
+  "normalization": {
+    "language": "English",
+    "time_rounding": "nearest_15_minutes",
+    "event_type": "call_activity"
+  },
+  "events_original": [
+    {
+      "start": "12:20",
+      "end": "12:47",
+      "contact": "father",
+      "description": "called father"
+    },
+    {
+      "start": "14:35",
+      "end": "14:50",
+      "contact": "egg donation service",
+      "description": "egg donation call"
+    }
+  ],
+  "events_rounded_15m": [
+    {
+      "start": "12:15",
+      "end": "12:45",
+      "contact": "father",
+      "description": "called father"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "contact": "egg donation service",
+      "description": "egg donation call"
+    }
+  ]
+}

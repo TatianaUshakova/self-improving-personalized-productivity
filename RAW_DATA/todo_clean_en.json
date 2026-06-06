@@ -1,0 +1,25 @@
+{
+  "source_file": "todo.md",
+  "source_language": "mixed",
+  "normalization": {
+    "language": "English",
+    "event_type": "todo_items"
+  },
+  "items": [
+    {
+      "text": "review the self-improving agents paper and think through a possible project direction"
+    },
+    {
+      "text": "personal family call"
+    },
+    {
+      "text": "administrative phone call"
+    },
+    {
+      "text": "visit a startup contact in Oakland"
+    },
+    {
+      "text": "explore job opportunities"
+    }
+  ]
+}

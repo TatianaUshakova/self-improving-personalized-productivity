@@ -16,6 +16,7 @@ from sia.config import Config
 from sia.io_utils import safe_load_json as _safe_load_json
 from sia.io_utils import safe_read_file as _safe_read_file
 from sia.logging_setup import get_logger
+from sia.providers import Provider
 
 logger = get_logger(__name__)
 
@@ -44,6 +45,8 @@ class ContextManager:
         self.generations = []
         self.meta_model = run_config.get("meta_model", self.cfg.DEFAULT_CLAUDE_META_MODEL)
         self.agent_impl = run_config.get("agent_impl", self.cfg.DEFAULT_AGENT_IMPL)
+        meta_provider = run_config.get("meta_provider")
+        self.meta_provider = meta_provider if isinstance(meta_provider, Provider) else None
 
     def initialize(self):
         """Create context.md with header information"""
@@ -158,6 +161,7 @@ class ContextManager:
                         prompt=file_prompt,
                         agent_working_directory=temp_dir,
                         agent_impl=self.agent_impl,
+                        provider=self.meta_provider,
                     )
 
                     # Read the summary from file

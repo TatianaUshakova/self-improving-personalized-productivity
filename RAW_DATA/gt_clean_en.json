@@ -1,0 +1,399 @@
+{
+  "source_file": "gt.md",
+  "source_language": "ru",
+  "date_text": "Friday, June 5",
+  "normalization": {
+    "language": "English",
+    "time_rounding": "nearest_15_minutes",
+    "label_style": "freeform_detailed_descriptions"
+  },
+  "notes": [
+    "Descriptions are translated to English but kept specific rather than mapped to coarse categories.",
+    "Time spans are rounded to the nearest 15 minutes for downstream scoring.",
+    "The original note starts with 'start of work 11:45', which is retained as context rather than a separate segment."
+  ],
+  "context": {
+    "work_started_at": "11:45"
+  },
+  "segments_original": [
+    {
+      "start": "12:20",
+      "end": "12:47",
+      "label": "called father"
+    },
+    {
+      "start": "12:50",
+      "end": "13:10",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:10",
+      "end": "13:40",
+      "label": "traveled to the coworking space to work"
+    },
+    {
+      "start": "13:40",
+      "end": "14:10",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:10",
+      "end": "14:35",
+      "label": "prepared for the egg donation call"
+    },
+    {
+      "start": "14:35",
+      "end": "14:50",
+      "label": "egg donation call"
+    },
+    {
+      "start": "14:50",
+      "end": "15:30",
+      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:30",
+      "end": "17:30",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "17:30",
+      "end": "18:30",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "18:30",
+      "end": "19:30",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "19:30",
+      "end": "20:00",
+      "label": "moved to the coworking space to continue working"
+    },
+    {
+      "start": "20:00",
+      "end": "22:40",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:40",
+      "end": "23:30",
+      "label": "job search"
+    },
+    {
+      "start": "23:30",
+      "end": "24:00",
+      "label": "planned tomorrow"
+    }
+  ],
+  "segments_rounded_15m": [
+    {
+      "start": "12:15",
+      "end": "12:45",
+      "label": "called father"
+    },
+    {
+      "start": "12:45",
+      "end": "13:15",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:15",
+      "end": "13:45",
+      "label": "traveled to the coworking space to work"
+    },
+    {
+      "start": "13:45",
+      "end": "14:15",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:15",
+      "end": "14:30",
+      "label": "prepared for the egg donation call"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "label": "egg donation call"
+    },
+    {
+      "start": "14:45",
+      "end": "15:30",
+      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:30",
+      "end": "17:30",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "17:30",
+      "end": "18:30",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "18:30",
+      "end": "19:30",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "19:30",
+      "end": "20:00",
+      "label": "moved to the coworking space to continue working"
+    },
+    {
+      "start": "20:00",
+      "end": "22:45",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:45",
+      "end": "23:30",
+      "label": "job search"
+    },
+    {
+      "start": "23:30",
+      "end": "24:00",
+      "label": "planned tomorrow"
+    }
+  ],
+  "slots_15m": [
+    {
+      "start": "12:15",
+      "end": "12:30",
+      "label": "called father"
+    },
+    {
+      "start": "12:30",
+      "end": "12:45",
+      "label": "called father"
+    },
+    {
+      "start": "12:45",
+      "end": "13:00",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:00",
+      "end": "13:15",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:15",
+      "end": "13:30",
+      "label": "traveled to the coworking space to work"
+    },
+    {
+      "start": "13:30",
+      "end": "13:45",
+      "label": "traveled to the coworking space to work"
+    },
+    {
+      "start": "13:45",
+      "end": "14:00",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:00",
+      "end": "14:15",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:15",
+      "end": "14:30",
+      "label": "prepared for the egg donation call"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "label": "egg donation call"
+    },
+    {
+      "start": "14:45",
+      "end": "15:00",
+      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:00",
+      "end": "15:15",
+      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:15",
+      "end": "15:30",
+      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+    },
+    {
+      "start": "15:30",
+      "end": "15:45",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "15:45",
+      "end": "16:00",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "16:00",
+      "end": "16:15",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "16:15",
+      "end": "16:30",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "16:30",
+      "end": "16:45",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "16:45",
+      "end": "17:00",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "17:00",
+      "end": "17:15",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "17:15",
+      "end": "17:30",
+      "label": "visited _location_ in Oakland"
+    },
+    {
+      "start": "17:30",
+      "end": "17:45",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "17:45",
+      "end": "18:00",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "18:00",
+      "end": "18:15",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "18:15",
+      "end": "18:30",
+      "label": "traveled back and stopped at a grocery store to buy food"
+    },
+    {
+      "start": "18:30",
+      "end": "18:45",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "18:45",
+      "end": "19:00",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "19:00",
+      "end": "19:15",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "19:15",
+      "end": "19:30",
+      "label": "worked in a cafe on hackathon preparation, read the paper, and tried to decide whether building a time-spent analyzer was a sensible idea"
+    },
+    {
+      "start": "19:30",
+      "end": "19:45",
+      "label": "moved to the coworking space to continue working"
+    },
+    {
+      "start": "19:45",
+      "end": "20:00",
+      "label": "moved to the coworking space to continue working"
+    },
+    {
+      "start": "20:00",
+      "end": "20:15",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "20:15",
+      "end": "20:30",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "20:30",
+      "end": "20:45",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "20:45",
+      "end": "21:00",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "21:00",
+      "end": "21:15",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "21:15",
+      "end": "21:30",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "21:30",
+      "end": "21:45",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "21:45",
+      "end": "22:00",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:00",
+      "end": "22:15",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:15",
+      "end": "22:30",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:30",
+      "end": "22:45",
+      "label": "continued hackathon preparation by reading the paper and GitHub materials and thinking through the time-spent analyzer idea"
+    },
+    {
+      "start": "22:45",
+      "end": "23:00",
+      "label": "job search"
+    },
+    {
+      "start": "23:00",
+      "end": "23:15",
+      "label": "job search"
+    },
+    {
+      "start": "23:15",
+      "end": "23:30",
+      "label": "job search"
+    },
+    {
+      "start": "23:30",
+      "end": "23:45",
+      "label": "planned tomorrow"
+    },
+    {
+      "start": "23:45",
+      "end": "24:00",
+      "label": "planned tomorrow"
+    }
+  ]
+}
