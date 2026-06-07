@@ -16,16 +16,16 @@
     "work_started_at": "11:45",
     "todo_items": [
       {
-        "text": "prep for the self-improvement hackathon and read the paper"
+        "text": "review a research paper and prepare for a project build"
       },
       {
-        "text": "call father"
+        "text": "call a family member"
       },
       {
-        "text": "call the egg donation service"
+        "text": "call the administrative service"
       },
       {
-        "text": "visit that MIPT guy's startup in Oakland"
+        "text": "visit a startup contact in another city"
       },
       {
         "text": "job search"
@@ -41,28 +41,28 @@
       {
         "start": "12:20",
         "end": "12:47",
-        "contact": "father",
-        "description": "called father"
+        "contact": "family member",
+        "description": "called a family member"
       },
       {
         "start": "14:35",
         "end": "14:50",
-        "contact": "egg donation service",
-        "description": "egg donation call"
+        "contact": "administrative service",
+        "description": "administrative call"
       }
     ],
     "events_rounded_15m": [
       {
         "start": "12:15",
         "end": "12:45",
-        "contact": "father",
-        "description": "called father"
+        "contact": "family member",
+        "description": "called a family member"
       },
       {
         "start": "14:30",
         "end": "14:45",
-        "contact": "egg donation service",
-        "description": "egg donation call"
+        "contact": "administrative service",
+        "description": "administrative call"
       }
     ]
   },
@@ -77,37 +77,37 @@
         "start": "14:50",
         "end": "15:30",
         "type": "travel",
-        "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+        "description": "traveled to meet a startup contact in another city to discuss their company"
       },
       {
         "start": "15:30",
         "end": "17:30",
         "type": "visit",
-        "description": "visited _startup_location_ in Oakland"
+        "description": "visited a startup office in another city"
       },
       {
         "start": "17:30",
         "end": "18:00",
         "type": "travel",
-        "description": "traveled from Oakland to Trader Joe's"
+        "description": "traveled from another city to a grocery store"
       },
       {
         "start": "18:00",
         "end": "18:30",
         "type": "travel",
-        "description": "traveled from Trader Joe's to Corgi Coffee"
+        "description": "traveled from the grocery store to a coffee shop"
       },
       {
         "start": "19:30",
         "end": "20:00",
         "type": "travel",
-        "description": "traveled from Corgi Coffee to Trellis coworking"
+        "description": "traveled from the coffee shop to a coworking space"
       },
       {
         "start": "24:00",
         "end": "24:30",
         "type": "travel",
-        "description": "traveled from Trellis coworking to home"
+        "description": "traveled from the coworking space to home"
       }
     ],
     "events_rounded_15m": [
@@ -115,37 +115,37 @@
         "start": "14:45",
         "end": "15:30",
         "type": "travel",
-        "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+        "description": "traveled to meet a startup contact in another city to discuss their company"
       },
       {
         "start": "15:30",
         "end": "17:30",
         "type": "visit",
-        "description": "visited _startup_location_ in Oakland"
+        "description": "visited a startup office in another city"
       },
       {
         "start": "17:30",
         "end": "18:00",
         "type": "travel",
-        "description": "traveled from Oakland to Trader Joe's"
+        "description": "traveled from another city to a grocery store"
       },
       {
         "start": "18:00",
         "end": "18:30",
         "type": "travel",
-        "description": "traveled from Trader Joe's to Corgi Coffee"
+        "description": "traveled from the grocery store to a coffee shop"
       },
       {
         "start": "19:30",
         "end": "20:00",
         "type": "travel",
-        "description": "traveled from Corgi Coffee to Trellis coworking"
+        "description": "traveled from the coffee shop to a coworking space"
       },
       {
         "start": "24:00",
         "end": "24:30",
         "type": "travel",
-        "description": "traveled from Trellis coworking to home"
+        "description": "traveled from the coworking space to home"
       }
     ]
   },
@@ -229,7 +229,7 @@
         "start": "11:44",
         "end": "11:44",
         "duration_minutes": 0,
-        "title": "Mail - Tatiana Ushakova - Outlook",
+        "title": "Outlook mail",
         "domain": "login.microsoftonline.com",
         "raw_domain": "login.microsoftonline.com",
         "is_redirect_like": false,
@@ -244,7 +244,7 @@
         "start": "11:44",
         "end": "11:44",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -259,7 +259,7 @@
         "start": "11:44",
         "end": "11:44",
         "duration_minutes": 0,
-        "title": "You have a new statement - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -274,7 +274,7 @@
         "start": "11:44",
         "end": "11:44",
         "duration_minutes": 0,
-        "title": "Mail - Tatiana Ushakova - Outlook",
+        "title": "Outlook mail",
         "domain": "outlook.cloud.microsoft",
         "raw_domain": "outlook.cloud.microsoft",
         "is_redirect_like": false,
@@ -289,7 +289,7 @@
         "start": "11:44",
         "end": "11:44",
         "duration_minutes": 0,
-        "title": "Mail - Tatiana Ushakova - Outlook",
+        "title": "Outlook mail",
         "domain": "outlook.office.com",
         "raw_domain": "outlook.office.com",
         "is_redirect_like": false,
@@ -319,7 +319,7 @@
         "start": "11:44",
         "end": "11:49",
         "duration_minutes": 5,
-        "title": "Google Календарь - Неделя 1 июня 2026",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -379,7 +379,7 @@
         "start": "12:49",
         "end": "12:50",
         "duration_minutes": 1,
-        "title": "Google Календарь - Неделя 1 июня 2026",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -424,7 +424,7 @@
         "start": "12:50",
         "end": "12:51",
         "duration_minutes": 1,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -469,7 +469,7 @@
         "start": "12:52",
         "end": "13:08",
         "duration_minutes": 16,
-        "title": "(10) YouTube",
+        "title": "YouTube",
         "domain": "youtube.com",
         "raw_domain": "youtube.com",
         "is_redirect_like": false,
@@ -484,7 +484,7 @@
         "start": "12:53",
         "end": "12:53",
         "duration_minutes": 0,
-        "title": "Mushfiq Sajib on X: \"Claude has a feature called ADHD Executive Function Mode. You can use it to hack your brain’s dopamine and finish a week’s worth of work in 4 hours. Here are 7 prompts to access it: ⤵️\" / X",
+        "title": "X post",
         "domain": "x.com",
         "raw_domain": "x.com",
         "is_redirect_like": false,
@@ -514,7 +514,7 @@
         "start": "12:58",
         "end": "12:58",
         "duration_minutes": 0,
-        "title": "Moritz Wallawitsch on X: \"holy shit - their api is leaking customer data https://t.co/AyQXGzWuMa\" / X",
+        "title": "X post",
         "domain": "x.com",
         "raw_domain": "x.com",
         "is_redirect_like": false,
@@ -529,7 +529,7 @@
         "start": "12:59",
         "end": "12:59",
         "duration_minutes": 0,
-        "title": "Vivek on X: \"some notes on getting into frontier ai labs\" / X",
+        "title": "X post",
         "domain": "x.com",
         "raw_domain": "x.com",
         "is_redirect_like": false,
@@ -544,7 +544,7 @@
         "start": "13:01",
         "end": "13:01",
         "duration_minutes": 0,
-        "title": "Lorwen Harris Nagle, PhD on X: \"A Stanford psychiatrist says modern anxiety is not caused by danger. It's caused by tiny habits that teach your brain to panic when nothing is actually wrong. You do them every day. And you call them normal. 6 normal habits quietly teaching your nervous system to panic:▼▼▼ https://t.co/d1NaS4Cc7D\" / X",
+        "title": "X post",
         "domain": "x.com",
         "raw_domain": "x.com",
         "is_redirect_like": false,
@@ -559,7 +559,7 @@
         "start": "13:08",
         "end": "13:08",
         "duration_minutes": 0,
-        "title": "(10) Do Google engineers actually vibe code? - YouTube",
+        "title": "video on YouTube",
         "domain": "youtube.com",
         "raw_domain": "youtube.com",
         "is_redirect_like": false,
@@ -574,7 +574,7 @@
         "start": "13:08",
         "end": "13:08",
         "duration_minutes": 0,
-        "title": "Your biggest advantage is no one knows who you are - YouTube",
+        "title": "video on YouTube",
         "domain": "youtube.com",
         "raw_domain": "youtube.com",
         "is_redirect_like": false,
@@ -589,7 +589,7 @@
         "start": "13:49",
         "end": "13:49",
         "duration_minutes": 0,
-        "title": "Google Календарь - Неделя 1 июня 2026",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -649,7 +649,7 @@
         "start": "13:54",
         "end": "13:54",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -769,7 +769,7 @@
         "start": "14:51",
         "end": "14:51",
         "duration_minutes": 0,
-        "title": "2044 Franklin St – Google Карты",
+        "title": "map destination",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -784,7 +784,7 @@
         "start": "14:51",
         "end": "14:51",
         "duration_minutes": 0,
-        "title": "2044 Franklin Street, Oakland, CA – Google Карты",
+        "title": "map destination",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -799,7 +799,7 @@
         "start": "14:51",
         "end": "15:20",
         "duration_minutes": 29,
-        "title": "Google Карты",
+        "title": "Google Maps",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -814,7 +814,7 @@
         "start": "14:51",
         "end": "15:20",
         "duration_minutes": 29,
-        "title": "откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты",
+        "title": "map route",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -829,7 +829,7 @@
         "start": "15:12",
         "end": "15:12",
         "duration_minutes": 0,
-        "title": "Unpaid final wages - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -844,7 +844,7 @@
         "start": "15:12",
         "end": "15:15",
         "duration_minutes": 3,
-        "title": "Sent Mail - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Sent email",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -859,7 +859,7 @@
         "start": "15:12",
         "end": "15:19",
         "duration_minutes": 7,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -874,7 +874,7 @@
         "start": "15:14",
         "end": "15:14",
         "duration_minutes": 0,
-        "title": "Court-Ordered Notice of Class Action - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -889,7 +889,7 @@
         "start": "15:14",
         "end": "15:14",
         "duration_minutes": 0,
-        "title": "Drafts (67) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Drafts folder",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -904,7 +904,7 @@
         "start": "15:14",
         "end": "15:18",
         "duration_minutes": 4,
-        "title": "Spam (95) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Spam folder",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -919,7 +919,7 @@
         "start": "15:15",
         "end": "15:15",
         "duration_minutes": 0,
-        "title": "Scheduled - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Scheduled email",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -934,7 +934,7 @@
         "start": "15:16",
         "end": "15:16",
         "duration_minutes": 0,
-        "title": "Новое сообщение в Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -949,7 +949,7 @@
         "start": "15:16",
         "end": "15:16",
         "duration_minutes": 0,
-        "title": "⏰ Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) начнётся завтра - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -964,7 +964,7 @@
         "start": "15:23",
         "end": "15:23",
         "duration_minutes": 0,
-        "title": "Google Календарь - Неделя 1 июня 2026",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -994,7 +994,7 @@
         "start": "17:40",
         "end": "17:40",
         "duration_minutes": 0,
-        "title": "Google Карты",
+        "title": "Google Maps",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -1009,7 +1009,7 @@
         "start": "17:42",
         "end": "17:43",
         "duration_minutes": 1,
-        "title": "Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma",
+        "title": "event page",
         "domain": "luma.com",
         "raw_domain": "luma.com",
         "is_redirect_like": false,
@@ -1069,7 +1069,7 @@
         "start": "17:49",
         "end": "17:49",
         "duration_minutes": 0,
-        "title": "Hexo Labs | Accelerating Superintelligence",
+        "title": "AI company website",
         "domain": "hexolabs.com",
         "raw_domain": "hexolabs.com",
         "is_redirect_like": false,
@@ -1084,7 +1084,7 @@
         "start": "17:50",
         "end": "17:50",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -1099,7 +1099,7 @@
         "start": "17:51",
         "end": "17:51",
         "duration_minutes": 0,
-        "title": "Important Logistics - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -1144,7 +1144,7 @@
         "start": "18:31",
         "end": "18:31",
         "duration_minutes": 0,
-        "title": "Joinee",
+        "title": "recruiting platform",
         "domain": "phystech4ever.joinee.io",
         "raw_domain": "phystech4ever.joinee.io",
         "is_redirect_like": false,
@@ -1399,7 +1399,7 @@
         "start": "20:56",
         "end": "20:56",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -1444,7 +1444,7 @@
         "start": "20:57",
         "end": "20:57",
         "duration_minutes": 0,
-        "title": "Tatiana Ushakova | LinkedIn",
+        "title": "LinkedIn profile",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -1504,7 +1504,7 @@
         "start": "21:46",
         "end": "21:46",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -1534,7 +1534,7 @@
         "start": "21:47",
         "end": "21:47",
         "duration_minutes": 0,
-        "title": "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup",
+        "title": "Meetup event page",
         "domain": "email-analytics.meetup.com",
         "raw_domain": "email-analytics.meetup.com",
         "is_redirect_like": false,
@@ -1549,7 +1549,7 @@
         "start": "21:47",
         "end": "21:47",
         "duration_minutes": 0,
-        "title": "512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps",
+        "title": "map route",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -1579,7 +1579,7 @@
         "start": "21:47",
         "end": "21:47",
         "duration_minutes": 0,
-        "title": "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup",
+        "title": "Meetup event page",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -1594,7 +1594,7 @@
         "start": "21:47",
         "end": "21:47",
         "duration_minutes": 0,
-        "title": "See you at: Walk & Talk About Life's Big Questions - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail message",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -1624,7 +1624,7 @@
         "start": "21:47",
         "end": "21:47",
         "duration_minutes": 0,
-        "title": "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup",
+        "title": "Meetup event page",
         "domain": "meetup.com",
         "raw_domain": "meetup.com",
         "is_redirect_like": false,
@@ -1984,7 +1984,7 @@
         "start": "22:39",
         "end": "22:39",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -2014,7 +2014,7 @@
         "start": "22:45",
         "end": "22:45",
         "duration_minutes": 0,
-        "title": "flowscope (YC P26): Overview | LinkedIn",
+        "title": "startup company overview | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2059,7 +2059,7 @@
         "start": "22:47",
         "end": "22:47",
         "duration_minutes": 0,
-        "title": "BentoLabs AI (YC P26): Overview | LinkedIn",
+        "title": "startup company overview | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2134,7 +2134,7 @@
         "start": "23:02",
         "end": "23:02",
         "duration_minutes": 0,
-        "title": "Kodiak Sciences: Overview | LinkedIn",
+        "title": "company overview | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2209,7 +2209,7 @@
         "start": "23:14",
         "end": "23:14",
         "duration_minutes": 0,
-        "title": "Overlay: Overview | LinkedIn",
+        "title": "company overview | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2224,7 +2224,7 @@
         "start": "23:14",
         "end": "23:14",
         "duration_minutes": 0,
-        "title": "Overlay: People | LinkedIn",
+        "title": "company people | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2239,7 +2239,7 @@
         "start": "23:14",
         "end": "23:14",
         "duration_minutes": 0,
-        "title": "Shiyu Xu | LinkedIn",
+        "title": "LinkedIn profile",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2284,7 +2284,7 @@
         "start": "23:18",
         "end": "23:18",
         "duration_minutes": 0,
-        "title": "Unconventional AI: Jobs | LinkedIn",
+        "title": "company jobs | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2314,7 +2314,7 @@
         "start": "23:19",
         "end": "23:19",
         "duration_minutes": 0,
-        "title": "Unconventional AI: People | LinkedIn",
+        "title": "company people | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2344,7 +2344,7 @@
         "start": "23:21",
         "end": "23:21",
         "duration_minutes": 0,
-        "title": "Fireworks AI: Jobs | LinkedIn",
+        "title": "company jobs | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2359,7 +2359,7 @@
         "start": "23:22",
         "end": "23:22",
         "duration_minutes": 0,
-        "title": "Apptronik: Jobs | LinkedIn",
+        "title": "company jobs | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2374,7 +2374,7 @@
         "start": "23:30",
         "end": "23:30",
         "duration_minutes": 0,
-        "title": "Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma",
+        "title": "event page",
         "domain": "luma.com",
         "raw_domain": "luma.com",
         "is_redirect_like": false,
@@ -2389,7 +2389,7 @@
         "start": "23:30",
         "end": "23:30",
         "duration_minutes": 0,
-        "title": "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+        "title": "Gmail inbox",
         "domain": "mail.google.com",
         "raw_domain": "mail.google.com",
         "is_redirect_like": false,
@@ -2404,7 +2404,7 @@
         "start": "23:30",
         "end": "23:32",
         "duration_minutes": 2,
-        "title": "Google Календарь - Неделя 1 июня 2026",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -2419,7 +2419,7 @@
         "start": "23:31",
         "end": "23:31",
         "duration_minutes": 0,
-        "title": "Next BASK General Meeting: Saturday, June 6 (In Person) | Bay Area Sea Kayakers",
+        "title": "community group meeting | organization site",
         "domain": "bask.org",
         "raw_domain": "bask.org",
         "is_redirect_like": false,
@@ -2449,7 +2449,7 @@
         "start": "23:31",
         "end": "23:32",
         "duration_minutes": 1,
-        "title": "Google Календарь - сведения о мероприятии",
+        "title": "Google Calendar",
         "domain": "calendar.google.com",
         "raw_domain": "calendar.google.com",
         "is_redirect_like": false,
@@ -2464,7 +2464,7 @@
         "start": "23:31",
         "end": "23:46",
         "duration_minutes": 15,
-        "title": "Walk & Talk About Life's Big Questions, Sat, Jun 13, 2026, 8:00 AM | Meetup",
+        "title": "Meetup event page",
         "domain": "meetup.com",
         "raw_domain": "meetup.com",
         "is_redirect_like": false,
@@ -2479,7 +2479,7 @@
         "start": "23:31",
         "end": "23:47",
         "duration_minutes": 16,
-        "title": "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup",
+        "title": "Meetup event page",
         "domain": "meetup.com",
         "raw_domain": "meetup.com",
         "is_redirect_like": false,
@@ -2494,7 +2494,7 @@
         "start": "23:33",
         "end": "23:33",
         "duration_minutes": 0,
-        "title": "Google Карты",
+        "title": "Google Maps",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -2509,7 +2509,7 @@
         "start": "23:33",
         "end": "23:33",
         "duration_minutes": 0,
-        "title": "откуда: Мое местоположение; куда: Пинтейл Пикник Арея, Pickleweed Picnic Area, Ferry Point Loop Trail, Richmond, CA 94801 – Google Карты",
+        "title": "map route",
         "domain": "google.com",
         "raw_domain": "google.com",
         "is_redirect_like": false,
@@ -2524,7 +2524,7 @@
         "start": "23:33",
         "end": "23:33",
         "duration_minutes": 0,
-        "title": "Google Карты",
+        "title": "Google Maps",
         "domain": "maps.app.goo.gl",
         "raw_domain": "maps.app.goo.gl",
         "is_redirect_like": false,
@@ -2539,7 +2539,7 @@
         "start": "23:40",
         "end": "23:40",
         "duration_minutes": 0,
-        "title": "BentoLabs AI (YC P26): Jobs | LinkedIn",
+        "title": "startup company jobs | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2554,7 +2554,7 @@
         "start": "23:43",
         "end": "23:43",
         "duration_minutes": 0,
-        "title": "depthfirst: Jobs | LinkedIn",
+        "title": "company jobs | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2569,7 +2569,7 @@
         "start": "23:47",
         "end": "23:47",
         "duration_minutes": 0,
-        "title": "Blog | Hexo Labs",
+        "title": "AI company blog",
         "domain": "hexolabs.com",
         "raw_domain": "hexolabs.com",
         "is_redirect_like": false,
@@ -2584,7 +2584,7 @@
         "start": "23:47",
         "end": "23:47",
         "duration_minutes": 0,
-        "title": "Frontier Research Club: Posts | LinkedIn",
+        "title": "research community posts | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2599,7 +2599,7 @@
         "start": "23:48",
         "end": "23:48",
         "duration_minutes": 0,
-        "title": "Frontier Research Club: About | LinkedIn",
+        "title": "research community page | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2614,7 +2614,7 @@
         "start": "23:48",
         "end": "23:48",
         "duration_minutes": 0,
-        "title": "Frontier Research Club: Overview | LinkedIn",
+        "title": "research community overview | LinkedIn",
         "domain": "linkedin.com",
         "raw_domain": "linkedin.com",
         "is_redirect_like": false,
@@ -2629,7 +2629,7 @@
         "start": "23:51",
         "end": "23:51",
         "duration_minutes": 0,
-        "title": "(10) I lead AGI safety at Google DeepMind – here's the view from the inside | Rohin Shah - YouTube",
+        "title": "AI lab interview video | YouTube",
         "domain": "youtube.com",
         "raw_domain": "youtube.com",
         "is_redirect_like": false,
@@ -2644,7 +2644,7 @@
         "start": "23:53",
         "end": "23:53",
         "duration_minutes": 0,
-        "title": "Vivek on X: \"some notes on getting into frontier ai labs\" / X",
+        "title": "X post",
         "domain": "x.com",
         "raw_domain": "x.com",
         "is_redirect_like": false,
@@ -2672,11 +2672,11 @@
         ],
         "raw_event_count": 10,
         "title_samples": [
-          "Mail - Tatiana Ushakova - Outlook",
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
-          "You have a new statement - tanyshka.ushakova@gmail.com - Gmail",
-          "Mail - Tatiana Ushakova - Outlook",
-          "Mail - Tatiana Ushakova - Outlook",
+          "Outlook mail",
+          "Gmail inbox",
+          "Gmail message",
+          "Outlook mail",
+          "Outlook mail",
           "Feed | LinkedIn"
         ],
         "session_hints": {
@@ -2703,10 +2703,10 @@
         ],
         "raw_event_count": 14,
         "title_samples": [
-          "Google Календарь - Неделя 1 июня 2026",
+          "Google Calendar",
           "Feed | LinkedIn",
           "Notifications | LinkedIn",
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+          "Gmail inbox",
           "переводчик - Поиск в Google",
           "Home / X"
         ],
@@ -2731,7 +2731,7 @@
         ],
         "raw_event_count": 4,
         "title_samples": [
-          "Google Календарь - Неделя 1 июня 2026",
+          "Google Calendar",
           "ChatGPT",
           "ChatGPT",
           "Egg Donation Medications Guide"
@@ -2755,7 +2755,7 @@
         ],
         "raw_event_count": 1,
         "title_samples": [
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail"
+          "Gmail inbox"
         ],
         "session_hints": {
           "contains_social": false,
@@ -2805,12 +2805,12 @@
         ],
         "raw_event_count": 13,
         "title_samples": [
-          "2044 Franklin St – Google Карты",
-          "2044 Franklin Street, Oakland, CA – Google Карты",
-          "Google Карты",
-          "откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты",
-          "Unpaid final wages - tanyshka.ushakova@gmail.com - Gmail",
-          "Sent Mail - tanyshka.ushakova@gmail.com - Gmail"
+          "map destination",
+          "map destination",
+          "Google Maps",
+          "map route",
+          "Gmail message",
+          "Sent email"
         ],
         "session_hints": {
           "contains_social": false,
@@ -2832,7 +2832,7 @@
         ],
         "raw_event_count": 2,
         "title_samples": [
-          "Google Календарь - Неделя 1 июня 2026",
+          "Google Calendar",
           "£1 270 to usd - Поиск в Google"
         ],
         "session_hints": {
@@ -2857,8 +2857,8 @@
         ],
         "raw_event_count": 5,
         "title_samples": [
-          "Google Карты",
-          "Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma",
+          "Google Maps",
+          "event page",
           "[2605.27276] SIA: Self Improving AI with Harness & Weight Updates",
           "GitHub - hexo-ai/sia: SIA is a Self Improving AI framework to autonomously improve the performance of any AI system (Model / Agent) on a benchmark task. · GitHub",
           "SIA: Self Improving AI with Harness Weight Updates"
@@ -2883,9 +2883,9 @@
         ],
         "raw_event_count": 3,
         "title_samples": [
-          "Hexo Labs | Accelerating Superintelligence",
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
-          "Important Logistics - tanyshka.ushakova@gmail.com - Gmail"
+          "AI company website",
+          "Gmail inbox",
+          "Gmail message"
         ],
         "session_hints": {
           "contains_social": false,
@@ -2910,7 +2910,7 @@
         "title_samples": [
           "Requests for Startups | Y Combinator",
           "YouTube",
-          "Joinee"
+          "recruiting platform"
         ],
         "session_hints": {
           "contains_social": false,
@@ -3035,10 +3035,10 @@
         ],
         "raw_event_count": 4,
         "title_samples": [
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+          "Gmail inbox",
           "Feed | LinkedIn",
           "Notifications | LinkedIn",
-          "Tatiana Ushakova | LinkedIn"
+          "LinkedIn profile"
         ],
         "session_hints": {
           "contains_social": true,
@@ -3087,12 +3087,12 @@
         ],
         "raw_event_count": 9,
         "title_samples": [
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+          "Gmail inbox",
           "Google Maps",
-          "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup",
-          "512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps",
+          "Meetup event page",
+          "map route",
           "Google Maps",
-          "Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup"
+          "Meetup event page"
         ],
         "session_hints": {
           "contains_social": false,
@@ -3153,9 +3153,9 @@
         "raw_event_count": 44,
         "title_samples": [
           "Notifications | LinkedIn",
-          "Inbox (10,461) - tanyshka.ushakova@gmail.com - Gmail",
+          "Gmail inbox",
           "Feed | LinkedIn",
-          "flowscope (YC P26): Overview | LinkedIn",
+          "startup company overview | LinkedIn",
           "LinkedIn",
           "Top job picks for you | LinkedIn"
         ],
@@ -3179,8 +3179,8 @@
         ],
         "raw_event_count": 2,
         "title_samples": [
-          "(10) I lead AGI safety at Google DeepMind – here's the view from the inside | Rohin Shah - YouTube",
-          "Vivek on X: \"some notes on getting into frontier ai labs\" / X"
+          "AI lab interview video | YouTube",
+          "X post"
         ],
         "session_hints": {
           "contains_social": true,

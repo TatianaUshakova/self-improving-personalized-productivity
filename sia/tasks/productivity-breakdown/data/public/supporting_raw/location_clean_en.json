@@ -21,37 +21,37 @@
       "start": "14:50",
       "end": "15:30",
       "type": "travel",
-      "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "description": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:30",
       "end": "17:30",
       "type": "visit",
-      "description": "visited _startup_location_ in Oakland"
+      "description": "visited a startup office in another city"
     },
     {
       "start": "17:30",
       "end": "18:00",
       "type": "travel",
-      "description": "traveled from Oakland to Trader Joe's"
+      "description": "traveled from another city to a grocery store"
     },
     {
       "start": "18:00",
       "end": "18:30",
       "type": "travel",
-      "description": "traveled from Trader Joe's to Corgi Coffee"
+      "description": "traveled from the grocery store to a coffee shop"
     },
     {
       "start": "19:30",
       "end": "20:00",
       "type": "travel",
-      "description": "traveled from Corgi Coffee to Trellis coworking"
+      "description": "traveled from the coffee shop to a coworking space"
     },
     {
       "start": "24:00",
       "end": "24:30",
       "type": "travel",
-      "description": "traveled from Trellis coworking to home"
+      "description": "traveled from the coworking space to home"
     }
   ],
   "events_rounded_15m": [
@@ -59,37 +59,37 @@
       "start": "14:45",
       "end": "15:30",
       "type": "travel",
-      "description": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "description": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:30",
       "end": "17:30",
       "type": "visit",
-      "description": "visited _startup_location_ in Oakland"
+      "description": "visited a startup office in another city"
     },
     {
       "start": "17:30",
       "end": "18:00",
       "type": "travel",
-      "description": "traveled from Oakland to Trader Joe's"
+      "description": "traveled from another city to a grocery store"
     },
     {
       "start": "18:00",
       "end": "18:30",
       "type": "travel",
-      "description": "traveled from Trader Joe's to Corgi Coffee"
+      "description": "traveled from the grocery store to a coffee shop"
     },
     {
       "start": "19:30",
       "end": "20:00",
       "type": "travel",
-      "description": "traveled from Corgi Coffee to Trellis coworking"
+      "description": "traveled from the coffee shop to a coworking space"
     },
     {
       "start": "24:00",
       "end": "24:30",
       "type": "travel",
-      "description": "traveled from Trellis coworking to home"
+      "description": "traveled from the coworking space to home"
     }
   ]
 }

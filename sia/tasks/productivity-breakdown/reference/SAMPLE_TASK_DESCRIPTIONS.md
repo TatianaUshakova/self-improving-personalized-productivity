@@ -25,7 +25,7 @@
 
 - `used Google Maps to plan an evening trip`
 - `traveled from home to a cafe`
-- `attended the Luma BBQ event`
+- `attended a community networking event`
 
 **Important properties**:
 
@@ -60,8 +60,8 @@ Prefer labels like:
 
 **Goal**: Produce labels that preserve that structure, for example:
 
-- `AeroVect interview`
-- `AeroVect interview, followed by a short note about what was discussed`
+- `company interview`
+- `company interview, followed by a short note about what was discussed`
 - `returned to budgeting app research after the interview`
 
 **Important properties**:

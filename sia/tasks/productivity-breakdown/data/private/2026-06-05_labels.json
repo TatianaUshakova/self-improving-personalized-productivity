@@ -19,7 +19,7 @@
     {
       "start": "12:20",
       "end": "12:47",
-      "label": "called father"
+      "label": "called a family member"
     },
     {
       "start": "12:50",
@@ -29,7 +29,7 @@
     {
       "start": "13:10",
       "end": "13:40",
-      "label": "traveled to the coworking space to work"
+      "label": "traveled to a coworking space to work"
     },
     {
       "start": "13:40",
@@ -39,22 +39,22 @@
     {
       "start": "14:10",
       "end": "14:35",
-      "label": "prepared for the egg donation call"
+      "label": "prepared for an administrative call"
     },
     {
       "start": "14:35",
       "end": "14:50",
-      "label": "egg donation call"
+      "label": "administrative call"
     },
     {
       "start": "14:50",
       "end": "15:30",
-      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "label": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:30",
       "end": "17:30",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "17:30",
@@ -69,7 +69,7 @@
     {
       "start": "19:30",
       "end": "20:00",
-      "label": "moved to the coworking space to continue working"
+      "label": "moved to a coworking space to continue working"
     },
     {
       "start": "20:00",
@@ -91,7 +91,7 @@
     {
       "start": "12:15",
       "end": "12:45",
-      "label": "called father"
+      "label": "called a family member"
     },
     {
       "start": "12:45",
@@ -101,7 +101,7 @@
     {
       "start": "13:15",
       "end": "13:45",
-      "label": "traveled to the coworking space to work"
+      "label": "traveled to a coworking space to work"
     },
     {
       "start": "13:45",
@@ -111,22 +111,22 @@
     {
       "start": "14:15",
       "end": "14:30",
-      "label": "prepared for the egg donation call"
+      "label": "prepared for an administrative call"
     },
     {
       "start": "14:30",
       "end": "14:45",
-      "label": "egg donation call"
+      "label": "administrative call"
     },
     {
       "start": "14:45",
       "end": "15:30",
-      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "label": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:30",
       "end": "17:30",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "17:30",
@@ -141,7 +141,7 @@
     {
       "start": "19:30",
       "end": "20:00",
-      "label": "moved to the coworking space to continue working"
+      "label": "moved to a coworking space to continue working"
     },
     {
       "start": "20:00",
@@ -163,12 +163,12 @@
     {
       "start": "12:15",
       "end": "12:30",
-      "label": "called father"
+      "label": "called a family member"
     },
     {
       "start": "12:30",
       "end": "12:45",
-      "label": "called father"
+      "label": "called a family member"
     },
     {
       "start": "12:45",
@@ -183,12 +183,12 @@
     {
       "start": "13:15",
       "end": "13:30",
-      "label": "traveled to the coworking space to work"
+      "label": "traveled to a coworking space to work"
     },
     {
       "start": "13:30",
       "end": "13:45",
-      "label": "traveled to the coworking space to work"
+      "label": "traveled to a coworking space to work"
     },
     {
       "start": "13:45",
@@ -203,67 +203,67 @@
     {
       "start": "14:15",
       "end": "14:30",
-      "label": "prepared for the egg donation call"
+      "label": "prepared for an administrative call"
     },
     {
       "start": "14:30",
       "end": "14:45",
-      "label": "egg donation call"
+      "label": "administrative call"
     },
     {
       "start": "14:45",
       "end": "15:00",
-      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "label": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:00",
       "end": "15:15",
-      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "label": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:15",
       "end": "15:30",
-      "label": "traveled to that startup in Oakland to meet an acquaintance from MIPT who had invited me to talk about their startup"
+      "label": "traveled to meet a startup contact in another city to discuss their company"
     },
     {
       "start": "15:30",
       "end": "15:45",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "15:45",
       "end": "16:00",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "16:00",
       "end": "16:15",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "16:15",
       "end": "16:30",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "16:30",
       "end": "16:45",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "16:45",
       "end": "17:00",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "17:00",
       "end": "17:15",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "17:15",
       "end": "17:30",
-      "label": "visited _location_ in Oakland"
+      "label": "visited a startup office in another city"
     },
     {
       "start": "17:30",
@@ -308,12 +308,12 @@
     {
       "start": "19:30",
       "end": "19:45",
-      "label": "moved to the coworking space to continue working"
+      "label": "moved to a coworking space to continue working"
     },
     {
       "start": "19:45",
       "end": "20:00",
-      "label": "moved to the coworking space to continue working"
+      "label": "moved to a coworking space to continue working"
     },
     {
       "start": "20:00",

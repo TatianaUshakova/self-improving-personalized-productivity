@@ -1,83 +1,83 @@
 11:53 PM
-Vivek on X: "some notes on getting into frontier ai labs" / X
+AI career thread on X
 x.com
 11:51 PM
-(10) I lead AGI safety at Google DeepMind – here's the view from the inside | Rohin Shah - YouTube
+AI lab interview video | YouTube
 youtube.com
 11:48 PM
-Frontier Research Club: About | LinkedIn
+research community page | LinkedIn
 linkedin.com
 11:48 PM
 LinkedIn
 linkedin.com
 11:48 PM
-Frontier Research Club: Overview | LinkedIn
+research community overview | LinkedIn
 linkedin.com
 11:47 PM
-Frontier Research Club: Posts | LinkedIn
+research community posts | LinkedIn
 linkedin.com
 11:47 PM
-Blog | Hexo Labs
+AI company blog
 hexolabs.com
 11:47 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 11:46 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 13, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 11:43 PM
 Top job picks for you | LinkedIn
 linkedin.com
 11:43 PM
-depthfirst: Jobs | LinkedIn
+company jobs | LinkedIn
 linkedin.com
 11:40 PM
-BentoLabs AI (YC P26): Jobs | LinkedIn
+startup company jobs | LinkedIn
 linkedin.com
 11:33 PM
-откуда: Мое местоположение; куда: Пинтейл Пикник Арея, Pickleweed Picnic Area, Ferry Point Loop Trail, Richmond, CA 94801 – Google Карты
+map route
 google.com
 11:33 PM
-откуда: Мое местоположение; куда: Пинтейл Пикник Арея, Pickleweed Picnic Area, Ferry Point Loop Trail, Richmond, CA 94801 – Google Карты
+map route
 google.com
 11:33 PM
-Google Карты
+Google Maps
 google.com
 11:33 PM
-Google Карты
+Google Maps
 google.com
 11:32 PM
-Google Календарь - Неделя 1 июня 2026
+Google Calendar
 calendar.google.com
 11:32 PM
-Google Календарь - сведения о мероприятии
+Google Calendar
 calendar.google.com
 11:31 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 11:31 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 13, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 11:31 PM
 meetup.com/the-board-walks-san-francisco/events/bwxqxtyjcjbrb/rsvp/?showConfirmedRsvpModal=true
 meetup.com
 11:31 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 11:31 PM
-Next BASK General Meeting: Saturday, June 6 (In Person) | Bay Area Sea Kayakers
+community group meeting | organization site
 bask.org
 11:31 PM
-Google Календарь - сведения о мероприятии
+Google Calendar
 calendar.google.com
 11:30 PM
-Inbox (10,460) - tanyshka.ushakova@gmail.com - Gmail
+Gmail inbox
 mail.google.com
 11:30 PM
-Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma
+event page
 luma.com
 11:30 PM
-Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma
+event page
 luma.com
 11:28 PM
 Top job picks for you | LinkedIn
@@ -182,7 +182,7 @@ linkedin.com
 Top job picks for you | LinkedIn
 linkedin.com
 11:22 PM
-Apptronik: Jobs | LinkedIn
+company jobs | LinkedIn
 linkedin.com
 11:22 PM
 LinkedIn
@@ -194,7 +194,7 @@ linkedin.com
 LinkedIn
 linkedin.com
 11:21 PM
-Fireworks AI: Jobs | LinkedIn
+company jobs | LinkedIn
 linkedin.com
 11:21 PM
 LinkedIn
@@ -227,10 +227,10 @@ linkedin.com
 Top job picks for you | LinkedIn
 linkedin.com
 11:19 PM
-Unconventional AI: People | LinkedIn
+company people | LinkedIn
 linkedin.com
 11:18 PM
-Unconventional AI: Jobs | LinkedIn
+company jobs | LinkedIn
 linkedin.com
 11:18 PM
 LinkedIn
@@ -257,16 +257,16 @@ linkedin.com
 Post | LinkedIn
 linkedin.com
 11:14 PM
-Shiyu Xu | LinkedIn
+LinkedIn profile
 linkedin.com
 11:14 PM
-Shiyu Xu | LinkedIn
+LinkedIn profile
 linkedin.com
 11:14 PM
-Overlay: People | LinkedIn
+company people | LinkedIn
 linkedin.com
 11:14 PM
-Overlay: Overview | LinkedIn
+company overview | LinkedIn
 linkedin.com
 11:14 PM
 LinkedIn
@@ -290,7 +290,7 @@ chatgpt.com
 Lead Computer Vision / Perception Engineer
 jobs.gem.com
 11:02 PM
-Kodiak Sciences: Overview | LinkedIn
+company overview | LinkedIn
 linkedin.com
 11:02 PM
 LinkedIn
@@ -317,7 +317,7 @@ x.com
 When AI builds itself \ Anthropic
 anthropic.com
 10:47 PM
-BentoLabs AI (YC P26): Overview | LinkedIn
+startup company overview | LinkedIn
 linkedin.com
 10:47 PM
 LinkedIn
@@ -350,7 +350,7 @@ linkedin.com
 LinkedIn
 linkedin.com
 10:45 PM
-flowscope (YC P26): Overview | LinkedIn
+startup company overview | LinkedIn
 linkedin.com
 10:45 PM
 LinkedIn
@@ -374,7 +374,7 @@ linkedin.com
 Feed | LinkedIn
 linkedin.com
 10:39 PM
-Inbox (10,460) - tanyshka.ushakova@gmail.com - Gmail
+Gmail inbox
 mail.google.com
 10:02 PM
 sia/sia/backends at main · hexo-ai/sia · GitHub
@@ -443,43 +443,43 @@ github.com
 sia/sia at main · hexo-ai/sia · GitHub
 github.com
 9:47 PM
-Walk & Talk About Life's Big Questions, Sat, Jun 6, 2026, 8:00 AM | Meetup
+Meetup event page
 meetup.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
+map route
 google.com
 9:47 PM
-512 Haight St, San Francisco, CA 94117 to 1210 Masonic Ave, San Francisco, CA 94117 - Google Maps
-google.com
-9:47 PM
-Google Maps
+map route
 google.com
 9:47 PM
 Google Maps
 google.com
 9:47 PM
-See you at: Walk & Talk About Life's Big Questions - tanyshka.ushakova@gmail.com - Gmail
+Google Maps
+google.com
+9:47 PM
+Gmail message
 mail.google.com
 9:32 PM
 Sparse Reward Handling
@@ -488,7 +488,7 @@ chatgpt.com
 ChatGPT
 chatgpt.com
 8:57 PM
-Tatiana Ushakova | LinkedIn
+LinkedIn profile
 linkedin.com
 8:57 PM
 Feed | LinkedIn
@@ -539,19 +539,19 @@ arxiv.org
 YouTube
 m.youtube.com
 6:31 PM
-Joinee
+recruiting platform
 phystech4ever.joinee.io
 6:31 PM
-Joinee
+recruiting platform
 phystech4ever.joinee.io
 6:26 PM
 Requests for Startups | Y Combinator
 ycombinator.com
 5:51 PM
-Important Logistics - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 5:49 PM
-Hexo Labs | Accelerating Superintelligence
+AI company website
 hexolabs.com
 5:43 PM
 GitHub - hexo-ai/sia: SIA is a Self Improving AI framework to autonomously improve the performance of any AI system (Model / Agent) on a benchmark task. · GitHub
@@ -560,79 +560,79 @@ github.com
 [2605.27276] SIA: Self Improving AI with Harness & Weight Updates
 arxiv.org
 5:43 PM
-Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma
+event page
 luma.com
 5:42 PM
-Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) · Luma
+event page
 luma.com
 5:40 PM
-Google Карты
+Google Maps
 google.com
 5:40 PM
-Google Карты
+Google Maps
 google.com
 5:40 PM
-Google Карты
+Google Maps
 google.com
 3:23 PM
 £1 270 to usd - Поиск в Google
 google.com
 3:23 PM
-Google Календарь - Неделя 1 июня 2026
+Google Calendar
 calendar.google.com
 3:20 PM
-Google Карты
+Google Maps
 google.com
 3:20 PM
-откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты
+map route
 google.com
 3:18 PM
-Spam (95) - tanyshka.ushakova@gmail.com - Gmail
+Spam folder
 mail.google.com
 3:16 PM
-Новое сообщение в Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 3:16 PM
-⏰ Self Improving AI (SIA) Agents - Emergency Hackathon (by AGI House SF & Nebius) начнётся завтра - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 3:15 PM
-Sent Mail - tanyshka.ushakova@gmail.com - Gmail
+Sent email
 mail.google.com
 3:15 PM
-Scheduled - tanyshka.ushakova@gmail.com - Gmail
+Scheduled email
 mail.google.com
 3:14 PM
-Court-Ordered Notice of Class Action - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 3:14 PM
-Drafts (67) - tanyshka.ushakova@gmail.com - Gmail
+Drafts folder
 mail.google.com
 3:12 PM
-Unpaid final wages - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 2:51 PM
-откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты
+map route
 google.com
 2:51 PM
-Google Карты
+Google Maps
 google.com
 2:51 PM
-откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты
+map route
 google.com
 2:51 PM
-откуда: Мое местоположение; куда: 2044 Franklin St, Oakland, CA 94612 – Google Карты
+map route
 google.com
 2:51 PM
-Google Карты
+Google Maps
 google.com
 2:51 PM
-2044 Franklin St – Google Карты
+map destination
 google.com
 2:51 PM
-2044 Franklin Street, Oakland, CA – Google Карты
+map destination
 google.com
 2:51 PM
-Google Карты
+Google Maps
 google.com
 2:35 PM
 переводчик - Поиск в Google
@@ -659,46 +659,46 @@ google.com
 Egg Donation Medications Guide
 chatgpt.com
 1:49 PM
-Google Календарь - Неделя 1 июня 2026
+Google Calendar
 calendar.google.com
 1:08 PM
-(10) Do Google engineers actually vibe code? - YouTube
+video on YouTube
 youtube.com
 1:08 PM
-(10) YouTube
+YouTube
 youtube.com
 1:08 PM
-Your biggest advantage is no one knows who you are - YouTube
+video on YouTube
 youtube.com
 1:03 PM
-https://x.com/SherryYanJiang
+x.com link
 x.com
 1:03 PM
-https://x.com/ericzakariasson
+x.com link
 x.com
 1:02 PM
-https://x.com/bryan_johnson
+x.com link
 x.com
 1:02 PM
 Home / X
 x.com
 1:01 PM
-Lorwen Harris Nagle, PhD on X: "A Stanford psychiatrist says modern anxiety is not caused by danger. It's caused by tiny habits that teach your brain to panic when nothing is actually wrong. You do them every day. And you call them normal. 6 normal habits quietly teaching your nervous system to pani
+X post
 x.com
 12:59 PM
-Vivek on X: "some notes on getting into frontier ai labs" / X
+AI career thread on X
 x.com
 12:58 PM
-Moritz Wallawitsch on X: "holy shit - their api is leaking customer data https://t.co/AyQXGzWuMa" / X
+X post
 x.com
 12:58 PM
 Home / X
 x.com
 12:55 PM
-https://x.com/heysajib
+x.com link
 x.com
 12:53 PM
-Mushfiq Sajib on X: "Claude has a feature called ADHD Executive Function Mode. You can use it to hack your brain’s dopamine and finish a week’s worth of work in 4 hours. Here are 7 prompts to access it: ⤵️" / X
+X post
 x.com
 12:52 PM
 переводчик - Поиск в Google
@@ -725,10 +725,10 @@ linkedin.com
 Feed | LinkedIn
 linkedin.com
 11:44 AM
-You have a new statement - tanyshka.ushakova@gmail.com - Gmail
+Gmail message
 mail.google.com
 11:44 AM
-Mail - Tatiana Ushakova - Outlook
+Outlook mail
 outlook.cloud.microsoft
 11:44 AM
 Sign in to your account

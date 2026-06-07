@@ -10,28 +10,28 @@
     {
       "start": "12:20",
       "end": "12:47",
-      "contact": "father",
-      "description": "called father"
+      "contact": "family member",
+      "description": "called a family member"
     },
     {
       "start": "14:35",
       "end": "14:50",
-      "contact": "egg donation service",
-      "description": "egg donation call"
+      "contact": "administrative service",
+      "description": "administrative call"
     }
   ],
   "events_rounded_15m": [
     {
       "start": "12:15",
       "end": "12:45",
-      "contact": "father",
-      "description": "called father"
+      "contact": "family member",
+      "description": "called a family member"
     },
     {
       "start": "14:30",
       "end": "14:45",
-      "contact": "egg donation service",
-      "description": "egg donation call"
+      "contact": "administrative service",
+      "description": "administrative call"
     }
   ]
 }

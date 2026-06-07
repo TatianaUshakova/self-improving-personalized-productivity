@@ -16,8 +16,8 @@ This is **not** a generic productivity categorization task. Do **not** collapse 
 Instead, your output should preserve rich descriptions such as:
 
 - `went out to get matcha`
-- `attended the Luma BBQ event`
-- `AeroVect interview, followed by a short note about what was discussed`
+- `attended a community networking event`
+- `company interview, followed by a short note about what was discussed`
 
 ## Core Challenge
 
