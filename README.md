@@ -47,6 +47,29 @@ This iterative process allows the system to autonomously refine and enhance its 
 
 SIA ships with five built-in tasks: `gpqa`, `lawbench`, `longcot-chess`, `productivity-breakdown`, `spaceship-titanic`.
 
+### Built-in task snapshot
+
+- `gpqa` — hard science multiple-choice question answering with exact-answer evaluation
+- `lawbench` — criminal charge prediction from court-case descriptions
+- `longcot-chess` — long-chain-of-thought chess move selection
+- `spaceship-titanic` — tabular prediction / harness experimentation task
+- `productivity-breakdown` — personalized daily activity reconstruction from noisy personal telemetry
+
+The `productivity-breakdown` task is different from the benchmark-style classification tasks above. It asks the target agent to infer a **detailed 15-minute timeline** from multi-modal evidence such as:
+
+- Chrome history and merged browsing sessions
+- Google Maps / location traces
+- call activity
+- todo items and lightweight user-specific heuristics
+
+The goal is not to output broad categories like `work` or `personal`, but detailed labels such as:
+
+- `went out to get matcha`
+- `AeroVect interview, followed by a short note about what was discussed`
+- `reading available docs and research-relevant GitHub repos for a budgeting app`
+
+This makes it a useful example of using SIA for **personalized preprocessing and structure discovery**, where the evolving harness must learn how to clean browsing traces, fuse signals across modalities, and infer user-specific interpretation rules rather than just tune a fixed classifier.
+
 ### Install
 
 Pick the agent impl that matches the LLMs you want to run.
@@ -84,6 +107,12 @@ sia run --task gpqa --max_gen 5 --run_id 1
 
 Swap `--task` for any of the five bundled tasks. (`sia --task ...` without the
 `run` sub-command still works and is treated as `sia run ...`.)
+
+For the bundled personalized-telemetry example:
+
+```bash
+sia run --task productivity-breakdown --max_gen 3 --run_id 1
+```
 
 Artifacts land in `runs/run_{run_id}/gen_{n}/`:
 - `target_agent.py` — the agent for that generation
@@ -234,6 +263,8 @@ the self-improvement loop optimizes against.
    and writes `gen_1/results.json` (or `evaluation_results.json`).
 4. Those metrics are injected into the feedback prompt and surfaced in `context.md`
    and the [web dashboard](#visualize-runs) (accuracy-across-generations chart, per-domain breakdown).
+
+For `productivity-breakdown`, evaluation is slot-aligned at 15-minute resolution. The evaluator compares predicted and hidden gold labels for the same time ranges and can use an LLM judge for semantic matching, with a lexical fallback when no judge API key is configured.
 
 Many bundled benchmark tasks ship an evaluator. For a **custom or experimental task**, drop an
 `evaluate.py` exposing an `evaluate()` function into `data/public/` — it decides the
