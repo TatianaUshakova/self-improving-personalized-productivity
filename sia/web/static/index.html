@@ -6,44 +6,51 @@
 <title>SIA Runs Visualizer</title>
 <style>
   :root {
-    --bg: #0f1115; --panel: #171a21; --panel-2: #1d212b; --border: #272c38;
-    --text: #e6e9ef; --muted: #8b93a7; --accent: #6ea8fe; --good: #4ade80;
-    --bad: #f87171; --warn: #fbbf24; --code-bg: #11141a;
-    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --bg: #f3efe6; --panel: rgba(255,255,255,.76); --panel-2: rgba(255,255,255,.52); --border: rgba(34,41,54,.12);
+    --text: #1e2430; --muted: #6d7482; --accent: #0f766e; --accent-2: #b45309; --good: #15803d;
+    --bad: #b91c1c; --warn: #b45309; --code-bg: #f8f4eb;
+    --shadow: 0 24px 60px rgba(35,38,43,.08);
+    --mono: "SF Mono", "IBM Plex Mono", "Fira Code", Menlo, Consolas, monospace;
+    --sans: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans);
-    font-size: 14px; line-height: 1.5; }
+  body { margin: 0; background:
+      radial-gradient(circle at top left, rgba(15,118,110,.14), transparent 28%),
+      radial-gradient(circle at top right, rgba(180,83,9,.12), transparent 24%),
+      linear-gradient(180deg, #f7f2e9 0%, #efe7db 100%);
+    color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.5; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .app { display: grid; grid-template-columns: 300px 1fr; height: 100vh; }
-  .sidebar { border-right: 1px solid var(--border); background: var(--panel);
-    overflow-y: auto; display: flex; flex-direction: column; }
-  .brand { padding: 16px 18px; border-bottom: 1px solid var(--border); display: flex;
-    align-items: center; gap: 10px; }
-  .brand h1 { font-size: 15px; margin: 0; letter-spacing: .5px; }
-  .brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--good);
-    box-shadow: 0 0 8px var(--good); }
-  .runlist { padding: 8px; }
+  .app { display: grid; grid-template-columns: 320px 1fr; height: 100vh; gap: 18px; padding: 18px; }
+  .sidebar { border: 1px solid var(--border); background: var(--panel); backdrop-filter: blur(18px);
+    box-shadow: var(--shadow); border-radius: 28px; overflow-y: auto; display: flex; flex-direction: column; }
+  .brand { padding: 18px 20px; border-bottom: 1px solid var(--border); display: flex;
+    align-items: flex-start; gap: 12px; }
+  .brand h1 { font-family: var(--serif); font-size: 19px; margin: 0; letter-spacing: .2px; }
+  .brand p { margin: 4px 0 0; color: var(--muted); font-size: 12px; max-width: 210px; }
+  .brand .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 6px rgba(15,118,110,.12); margin-top: 8px; flex-shrink: 0; }
+  .runlist { padding: 10px; }
   .run-item { display: block; padding: 10px 12px; border-radius: 8px; cursor: pointer;
-    border: 1px solid transparent; margin-bottom: 4px; }
-  .run-item:hover { background: var(--panel-2); }
-  .run-item.active { background: var(--panel-2); border-color: var(--accent); }
+    border: 1px solid transparent; margin-bottom: 6px; transition: transform .12s ease, border-color .12s ease, background .12s ease; }
+  .run-item:hover { background: var(--panel-2); text-decoration: none; transform: translateY(-1px); }
+  .run-item.active { background: linear-gradient(135deg, rgba(15,118,110,.12), rgba(180,83,9,.08)); border-color: rgba(15,118,110,.28); }
   .run-item .top { display: flex; justify-content: space-between; align-items: center; }
   .run-item .name { font-weight: 600; }
   .run-item .sub { color: var(--muted); font-size: 12px; margin-top: 2px;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .main { overflow-y: auto; padding: 24px 28px; }
+  .main { overflow-y: auto; padding: 28px 30px 46px; border: 1px solid var(--border); background: var(--panel);
+    backdrop-filter: blur(18px); box-shadow: var(--shadow); border-radius: 32px; }
   .badge { font-family: var(--mono); font-size: 12px; padding: 2px 8px; border-radius: 999px;
-    background: var(--panel-2); border: 1px solid var(--border); }
-  .badge.good { color: var(--good); border-color: #2c5; }
+    background: rgba(255,255,255,.7); border: 1px solid var(--border); }
+  .badge.good { color: var(--good); border-color: rgba(21,128,61,.35); }
   .badge.bad { color: var(--bad); }
   .badge.warn { color: var(--warn); }
   .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
     gap: 10px; margin: 12px 0 20px; }
   .meta-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
-    padding: 9px 12px; }
+    padding: 11px 14px; box-shadow: 0 10px 28px rgba(35,38,43,.04); }
   .meta-card .k { color: var(--muted); font-size: 11px; text-transform: uppercase;
     letter-spacing: .6px; }
   .meta-card .v { margin-top: 4px; font-family: var(--mono); font-size: 13px; word-break: break-word; }
@@ -51,7 +58,7 @@
      hover/focus tooltip carrying the full detail so the run header stays tiny. */
   .chip-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 20px; }
   .pchip { position: relative; flex: 1 1 0; min-width: 200px; background: var(--panel);
-    border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; cursor: help;
+    border: 1px solid var(--border); border-radius: 16px; padding: 10px 14px; cursor: help;
     display: flex; align-items: center; gap: 12px; }
   .pchip:hover, .pchip:focus-within { border-color: var(--accent); outline: none; }
   .pchip-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
@@ -72,7 +79,7 @@
   .kv-k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .6px;
     min-width: 76px; flex-shrink: 0; }
   .kv-v { font-family: var(--mono); font-size: 12.5px; word-break: break-word; }
-  h2 { font-size: 18px; margin: 24px 0 8px; }
+  h2 { font-family: var(--serif); font-size: 28px; margin: 24px 0 8px; line-height: 1.1; }
   h3 { font-size: 15px; margin: 18px 0 8px; color: var(--muted); }
   .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin: 8px 0 16px;
     flex-wrap: wrap; }
@@ -80,7 +87,7 @@
     border: 1px solid transparent; border-bottom: none; }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--text); background: var(--panel); border-color: var(--border); }
-  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px;
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 16px;
     padding: 14px 16px; overflow-x: auto; font-family: var(--mono); font-size: 12.5px;
     line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
   pre.nowrap { white-space: pre; word-break: normal; }
@@ -93,13 +100,13 @@
   .t-f { color: #82aaff; }                       /* def/class name */
   table { border-collapse: collapse; width: 100%; font-size: 13px; }
   th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); }
-  th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--bg); }
+  th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: #f2ece1; }
   td.mono, th.mono { font-family: var(--mono); }
   .ok { color: var(--good); } .no { color: var(--bad); }
-  .gen-chart { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
-    padding: 16px; margin: 8px 0 20px; }
+  .gen-chart { background: linear-gradient(135deg, rgba(15,118,110,.08), rgba(180,83,9,.06));
+    border: 1px solid var(--border); border-radius: 22px; padding: 18px; margin: 8px 0 20px; }
   .pill-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-  .pill { padding: 6px 12px; border-radius: 999px; cursor: pointer; background: var(--panel);
+  .pill { padding: 6px 12px; border-radius: 999px; cursor: pointer; background: rgba(255,255,255,.58);
     border: 1px solid var(--border); color: var(--muted); }
   .pill.active { color: var(--text); border-color: var(--accent); }
   .bar { height: 8px; background: var(--panel-2); border-radius: 4px; overflow: hidden; }
@@ -124,12 +131,38 @@
     border-radius: 8px; padding: 6px 10px; font-family: var(--sans); font-size: 13px; }
   .crumbs { color: var(--muted); margin-bottom: 6px; font-size: 13px; }
   .spinner { color: var(--muted); padding: 30px; }
+  .hero { display: grid; grid-template-columns: 1.3fr .9fr; gap: 18px; align-items: stretch; }
+  .hero-card, .summary-card { background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.58));
+    border: 1px solid var(--border); border-radius: 24px; padding: 20px; box-shadow: 0 16px 40px rgba(35,38,43,.06); }
+  .hero-card h2 { margin: 0 0 10px; }
+  .hero-kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-size: 11px; font-weight: 700; }
+  .hero-copy { color: var(--muted); max-width: 58ch; margin: 0 0 18px; font-size: 15px; }
+  .hero-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .hero-stat { background: rgba(15,118,110,.06); border: 1px solid rgba(15,118,110,.12); border-radius: 18px; padding: 14px; }
+  .hero-stat .v { font-family: var(--serif); font-size: 30px; line-height: 1; }
+  .hero-stat .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-top: 8px; }
+  .summary-card h3 { margin-top: 0; color: var(--text); font-family: var(--serif); font-size: 20px; }
+  .summary-list { display: grid; gap: 10px; margin-top: 14px; }
+  .summary-item { border: 1px solid var(--border); border-radius: 16px; padding: 12px 14px; background: rgba(255,255,255,.48); }
+  .summary-item .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+  .summary-item .value { margin-top: 6px; font-weight: 600; }
+  @media (max-width: 920px) {
+    .app { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 <div class="app">
   <aside class="sidebar">
-    <div class="brand"><span class="dot"></span><h1>SIA RUNS</h1></div>
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <h1>SIA Control Room</h1>
+        <p>Track generations, inspect target agents, and watch the improvement loop converge.</p>
+      </div>
+    </div>
     <div class="runlist" id="runlist"><div class="spinner">Loading…</div></div>
   </aside>
   <main class="main" id="main"><div class="empty">Select a run from the left.</div></main>
@@ -160,6 +193,38 @@ const api = async (path) => {
 const fmtPct = (p) => p == null ? "—" : p.toFixed(1) + "%";
 const pctClass = (p) => p == null ? "" : p >= 50 ? "good" : p >= 25 ? "warn" : "bad";
 const esc = (s) => (s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const bestRun = () => RUNS.reduce((best, r) =>
+  ((r.best_accuracy_percent ?? -1) > (best?.best_accuracy_percent ?? -1) ? r : best), null);
+
+function renderFileProtocolMessage() {
+  $("#runlist").innerHTML = `<div class="empty">This UI needs the SIA web server.</div>`;
+  $("#main").innerHTML = `
+    <div class="hero">
+      <section class="hero-card">
+        <div class="hero-kicker">Server Required</div>
+        <h2>Open this page through <code>sia web</code>, not <code>file://</code>.</h2>
+        <p class="hero-copy">
+          The visualizer loads run data from API endpoints like <code>/api/runs</code>.
+          When you open <code>index.html</code> directly from disk, the browser cannot fetch those endpoints,
+          so the app shows “failed to fetch”.
+        </p>
+        <pre>sia web --runs-dir ./runs --port 8000</pre>
+      </section>
+      <aside class="summary-card">
+        <h3>Then open</h3>
+        <div class="summary-list">
+          <div class="summary-item">
+            <div class="label">Local URL</div>
+            <div class="value">http://127.0.0.1:8000</div>
+          </div>
+          <div class="summary-item">
+            <div class="label">Why it failed</div>
+            <div class="value">Direct file loads do not provide the FastAPI backend.</div>
+          </div>
+        </div>
+      </aside>
+    </div>`;
+}
 
 // Minimal, safe markdown (headings, bold, inline code, lists, hr, code fences).
 function md(src) {
@@ -238,6 +303,10 @@ function highlightPython(code) {
 // ---- Routing (hash) ---------------------------------------------------------
 let RUNS = [];
 async function boot() {
+  if (location.protocol === "file:") {
+    renderFileProtocolMessage();
+    return;
+  }
   try {
     RUNS = await api("/api/runs");
   } catch (e) { $("#runlist").innerHTML = `<div class="empty">Failed to load runs.<br>${esc(e.message)}</div>`; return; }
@@ -283,7 +352,7 @@ async function route() {
   syncSidebarActive();
   if (!run) {
     MOUNTED = { run: null, gen: null, tab: null };
-    $("#main").innerHTML = `<div class="empty">Select a run from the left.</div>`;
+    renderHome();
     return;
   }
 
@@ -301,6 +370,37 @@ async function route() {
 
   if (MOUNTED.run !== run) { renderRun(detail); MOUNTED = { run, gen: null, tab: null }; }
   mountGen(detail);
+}
+
+function renderHome() {
+  const main = $("#main");
+  const best = bestRun();
+  const totalGens = RUNS.reduce((sum, r) => sum + (r.num_generations || 0), 0);
+  const trackedTasks = new Set(RUNS.map(r => r.task).filter(Boolean)).size;
+  main.innerHTML = "";
+  main.append(
+    h("div", { class: "hero" },
+      h("section", { class: "hero-card" },
+        h("div", { class: "hero-kicker" }, "Self-Improving Productivity System"),
+        h("h2", {}, "Inspect how each run rewrites its own behavior."),
+        h("p", { class: "hero-copy" },
+          "Use the left rail to jump between runs, compare generation scores, read prompts, and inspect the exact target-agent code that produced each attempt."),
+        h("div", { class: "hero-grid" },
+          h("div", { class: "hero-stat" }, h("div", { class: "v" }, String(RUNS.length)), h("div", { class: "k" }, "Runs tracked")),
+          h("div", { class: "hero-stat" }, h("div", { class: "v" }, String(totalGens)), h("div", { class: "k" }, "Generations logged")),
+          h("div", { class: "hero-stat" }, h("div", { class: "v" }, String(trackedTasks)), h("div", { class: "k" }, "Tasks covered")))),
+      h("aside", { class: "summary-card" },
+        h("h3", {}, "Quick Read"),
+        h("div", { class: "summary-list" },
+          h("div", { class: "summary-item" },
+            h("div", { class: "label" }, "Best run"),
+            h("div", { class: "value" }, best ? `${best.name} · ${fmtPct(best.best_accuracy_percent)}` : "No runs yet")),
+          h("div", { class: "summary-item" },
+            h("div", { class: "label" }, "Primary action"),
+            h("div", { class: "value" }, "Open any run to inspect its latest generation.")),
+          h("div", { class: "summary-item" },
+            h("div", { class: "label" }, "What you can inspect"),
+            h("div", { class: "value" }, "Scores, domain breakdowns, prompts, code, trajectories, and logs."))))));
 }
 
 // Flatten a (possibly nested) object into [dotted-key, value] rows, skipping
