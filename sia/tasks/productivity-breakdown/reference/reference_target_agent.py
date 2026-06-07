@@ -23,7 +23,7 @@ from openai import OpenAI
 
 MODEL_NAME = "moonshotai/Kimi-K2.6"
 NEBIUS_BASE_URL = "https://api.tokenfactory.us-central1.nebius.com/v1/"
-MAX_TOKENS = 6000
+MAX_TOKENS = 2500
 
 
 def setup_client() -> OpenAI:
@@ -53,6 +53,22 @@ def overlaps(start_a: int, end_a: int, start_b: int, end_b: int) -> bool:
     return start_a < end_b and start_b < end_a
 
 
+def clip_text(text: str, limit: int = 120) -> str:
+    text = " ".join(str(text).split())
+    if len(text) <= limit:
+        return text
+    return text[: limit - 3] + "..."
+
+
+def summarize_event(event: dict[str, Any], preferred_keys: list[str]) -> str:
+    parts = []
+    for key in preferred_keys:
+        value = event.get(key)
+        if value:
+            parts.append(str(value))
+    return clip_text(" | ".join(parts), 140)
+
+
 def build_slot_index(day: dict[str, Any]) -> list[dict[str, Any]]:
     work_started_at = day.get("user_context", {}).get("work_started_at", "09:00")
     start_minute = hhmm_to_minutes(work_started_at)
@@ -72,22 +88,37 @@ def build_slot_index(day: dict[str, Any]) -> list[dict[str, Any]]:
             }
         )
 
-    def attach_time_bounded(events: list[dict[str, Any]], target_key: str) -> None:
+    def attach_time_bounded(
+        events: list[dict[str, Any]], target_key: str, preferred_keys: list[str]
+    ) -> None:
         for event in events:
             try:
                 event_start = hhmm_to_minutes(event["start"])
                 event_end = hhmm_to_minutes(event["end"])
             except Exception:
                 continue
+            summarized = summarize_event(event, preferred_keys)
             for slot in slots:
                 slot_start = hhmm_to_minutes(slot["start"])
                 slot_end = hhmm_to_minutes(slot["end"])
                 if overlaps(slot_start, slot_end, event_start, event_end):
-                    slot[target_key].append(event)
+                    slot[target_key].append(summarized)
 
-    attach_time_bounded(day.get("call_activity", {}).get("events_rounded_15m", []), "call_evidence")
-    attach_time_bounded(day.get("location_activity", {}).get("events_rounded_15m", []), "location_evidence")
-    attach_time_bounded(day.get("chrome_activity", {}).get("merged_sessions", []), "chrome_session_evidence")
+    attach_time_bounded(
+        day.get("call_activity", {}).get("events_rounded_15m", []),
+        "call_evidence",
+        ["description", "contact"],
+    )
+    attach_time_bounded(
+        day.get("location_activity", {}).get("events_rounded_15m", []),
+        "location_evidence",
+        ["description", "type"],
+    )
+    attach_time_bounded(
+        day.get("chrome_activity", {}).get("merged_sessions", []),
+        "chrome_session_evidence",
+        ["session_label_hint", "primary_domain", "titles_preview"],
+    )
 
     for event in day.get("chrome_activity", {}).get("raw_events_normalized", []):
         try:
@@ -109,6 +140,22 @@ def build_prompt_for_day(day: dict[str, Any]) -> tuple[str, list[dict[str, Any]]
     slots = build_slot_index(day)
     heuristics = day.get("user_context", {}).get("heuristics", [])
     todos = [item["text"] for item in day.get("user_context", {}).get("todo_items", [])]
+    chrome_summary = day.get("chrome_activity", {}).get("summary", {})
+
+    compact_slots = []
+    for slot in slots:
+        compact_slot = {
+            "start": slot["start"],
+            "end": slot["end"],
+            "chrome_raw_event_count": slot["chrome_raw_event_count"],
+        }
+        if slot["call_evidence"]:
+            compact_slot["call_evidence"] = slot["call_evidence"][:2]
+        if slot["location_evidence"]:
+            compact_slot["location_evidence"] = slot["location_evidence"][:2]
+        if slot["chrome_session_evidence"]:
+            compact_slot["chrome_session_evidence"] = slot["chrome_session_evidence"][:2]
+        compact_slots.append(compact_slot)
 
     prompt = {
         "task": (
@@ -120,7 +167,12 @@ def build_prompt_for_day(day: dict[str, Any]) -> tuple[str, list[dict[str, Any]]
         "work_started_at": day.get("user_context", {}).get("work_started_at"),
         "todo_items": todos,
         "heuristics": heuristics,
-        "slot_evidence": slots,
+        "chrome_summary": {
+            "raw_event_count": chrome_summary.get("raw_event_count"),
+            "merged_session_count": chrome_summary.get("merged_session_count"),
+            "top_domains": chrome_summary.get("top_domains", [])[:8],
+        },
+        "slot_evidence": compact_slots,
         "required_output_schema": {
             "date": "YYYY-MM-DD",
             "slots_15m": [{"start": "HH:MM", "end": "HH:MM", "label": "detailed freeform description"}],
@@ -129,6 +181,7 @@ def build_prompt_for_day(day: dict[str, Any]) -> tuple[str, list[dict[str, Any]]
         "instructions": [
             "Use cross-signal evidence across browsing, location, calls, todos, and heuristics.",
             "Heuristics are weak hints, not labels to copy blindly.",
+            "Work from the compact slot evidence and day summary. Do not expand every raw browsing event unless absolutely necessary.",
             "If evidence is ambiguous, still make your best specific guess rather than using broad labels.",
             "Return JSON only.",
         ],

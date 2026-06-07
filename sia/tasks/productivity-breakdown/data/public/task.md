@@ -43,6 +43,7 @@ The public dataset directory may also include supporting source artifacts under:
 - `supporting_raw/`
 
 These supporting files are agent-visible and may contain the lower-level raw or cleaned inputs used to assemble the day-level JSON, such as browser-history exports, call notes, location traces, and todo snapshots.
+They are intended as optional fallback evidence, not the default primary input for every model call.
 
 Each file may contain:
 
@@ -68,6 +69,7 @@ The Chrome history may include:
 - redirect-like entries
 
 Use the evidence jointly. Do not rely on a single modality if others provide clarification.
+For efficiency, start from `day_*_public.json` and only inspect `supporting_raw/` selectively when the compact day-level evidence is insufficient for a specific ambiguity.
 
 ## Required Output
 
@@ -159,6 +161,7 @@ and strongly prefer that over:
 4. Use user-specific patterns inferred from the data rather than generic assumptions.
 5. When evidence is ambiguous, still provide your best slot-level reconstruction rather than falling back to broad generic labels.
 6. Heuristics present in `user_context` are advisory clues, not labels. Use them to guide interpretation, not to replace reasoning from the raw evidence.
+7. Keep the solving loop efficient: avoid copying entire raw support files into prompts when a compact summary or a few targeted details would suffice.
 
 ## Evaluation
 
