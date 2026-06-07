@@ -1,0 +1,154 @@
+{
+  "source_file": "gt.md",
+  "source_language": "ru",
+  "date_text": "Friday, June 5",
+  "normalization": {
+    "language": "English",
+    "time_rounding": "nearest_15_minutes",
+    "label_style": "freeform_detailed_descriptions"
+  },
+  "notes": [
+    "Descriptions are translated to English but kept specific rather than mapped to coarse categories.",
+    "Time spans are rounded to the nearest 15 minutes for downstream scoring.",
+    "This fast-turn task is intentionally restricted to an early slice of the day."
+  ],
+  "context": {
+    "work_started_at": "12:15"
+  },
+  "segments_original": [
+    {
+      "start": "12:20",
+      "end": "12:47",
+      "label": "called a family member"
+    },
+    {
+      "start": "12:50",
+      "end": "13:10",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:10",
+      "end": "13:40",
+      "label": "traveled to a coworking space to work"
+    },
+    {
+      "start": "13:40",
+      "end": "14:10",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:10",
+      "end": "14:35",
+      "label": "prepared for an administrative call"
+    },
+    {
+      "start": "14:35",
+      "end": "14:50",
+      "label": "administrative call"
+    },
+    {
+      "start": "14:50",
+      "end": "15:30",
+      "label": "traveled to meet a startup contact in another city to discuss their company"
+    }
+  ],
+  "segments_rounded_15m": [
+    {
+      "start": "12:15",
+      "end": "12:45",
+      "label": "called a family member"
+    },
+    {
+      "start": "12:45",
+      "end": "13:15",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:15",
+      "end": "13:45",
+      "label": "traveled to a coworking space to work"
+    },
+    {
+      "start": "13:45",
+      "end": "14:15",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:15",
+      "end": "14:30",
+      "label": "prepared for an administrative call"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "label": "administrative call"
+    },
+    {
+      "start": "14:45",
+      "end": "15:30",
+      "label": "traveled to meet a startup contact in another city to discuss their company"
+    }
+  ],
+  "slots_15m": [
+    {
+      "start": "12:15",
+      "end": "12:30",
+      "label": "called a family member"
+    },
+    {
+      "start": "12:30",
+      "end": "12:45",
+      "label": "called a family member"
+    },
+    {
+      "start": "12:45",
+      "end": "13:00",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:00",
+      "end": "13:15",
+      "label": "got sucked into YouTube"
+    },
+    {
+      "start": "13:15",
+      "end": "13:30",
+      "label": "traveled to a coworking space to work"
+    },
+    {
+      "start": "13:30",
+      "end": "13:45",
+      "label": "traveled to a coworking space to work"
+    },
+    {
+      "start": "13:45",
+      "end": "14:00",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:00",
+      "end": "14:15",
+      "label": "stopped at a cafe, tried to work there for a bit, then moved to a coffee shop"
+    },
+    {
+      "start": "14:15",
+      "end": "14:30",
+      "label": "prepared for an administrative call"
+    },
+    {
+      "start": "14:30",
+      "end": "14:45",
+      "label": "administrative call"
+    },
+    {
+      "start": "14:45",
+      "end": "15:00",
+      "label": "traveled to meet a startup contact in another city to discuss their company"
+    },
+    {
+      "start": "15:00",
+      "end": "15:15",
+      "label": "traveled to meet a startup contact in another city to discuss their company"
+    }
+  ]
+}

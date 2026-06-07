@@ -1,0 +1,817 @@
+{
+  "date": "2026-06-05",
+  "day_label": "Friday, June 5 (fast slice)",
+  "timezone": "local_user_time",
+  "purpose": "Fast-turn subset of the full public evidence for quick self-improvement iterations.",
+  "user_context": {
+    "work_started_at": "12:15",
+    "todo_items": [
+      {
+        "text": "review a research paper and think through a possible project direction"
+      },
+      {
+        "text": "personal family call"
+      },
+      {
+        "text": "administrative phone call"
+      },
+      {
+        "text": "visit a startup contact in another city"
+      },
+      {
+        "text": "explore job opportunities"
+      }
+    ],
+    "heuristics": [
+      "google maps are used to plan future trips",
+      "intent of users action often can be inferred by name of chat with llms used during activity"
+    ]
+  },
+  "instructions_context": {
+    "expected_output_granularity": "15-minute intervals or equivalent contiguous segments",
+    "time_window": {
+      "start": "12:15",
+      "end": "15:15"
+    },
+    "label_style": "detailed freeform activity descriptions",
+    "notes": [
+      "This task is intentionally limited to an early slice of the day to make self-improvement iterations cheaper.",
+      "Reconstruct only the specified time window.",
+      "Chrome history may contain duplicates, redirects, or shallow navigational noise; merged sessions are provided as an additional hint rather than final truth."
+    ]
+  },
+  "call_activity": {
+    "events_original": [
+      {
+        "start": "12:20",
+        "end": "12:47",
+        "contact": "family member",
+        "description": "called a family member"
+      },
+      {
+        "start": "14:35",
+        "end": "14:50",
+        "contact": "administrative service",
+        "description": "administrative call"
+      }
+    ],
+    "events_rounded_15m": [
+      {
+        "start": "12:15",
+        "end": "12:45",
+        "contact": "family member",
+        "description": "called a family member"
+      },
+      {
+        "start": "14:30",
+        "end": "14:45",
+        "contact": "administrative service",
+        "description": "administrative call"
+      }
+    ]
+  },
+  "location_activity": {
+    "context_only": [
+      {
+        "text": "up to 1pm home"
+      }
+    ],
+    "events_original": [
+      {
+        "start": "14:50",
+        "end": "15:30",
+        "type": "travel",
+        "description": "traveled to meet a startup contact in another city to discuss their company"
+      }
+    ],
+    "events_rounded_15m": [
+      {
+        "start": "14:45",
+        "end": "15:30",
+        "type": "travel",
+        "description": "traveled to meet a startup contact in another city to discuss their company"
+      }
+    ]
+  },
+  "chrome_activity": {
+    "summary": {
+      "raw_event_count": 36,
+      "deduped_event_count": 36,
+      "merged_session_count": 5,
+      "top_domains": [
+        [
+          "mail.google.com",
+          8
+        ],
+        [
+          "google.com",
+          8
+        ],
+        [
+          "x.com",
+          6
+        ],
+        [
+          "youtube.com",
+          3
+        ],
+        [
+          "claude.ai",
+          3
+        ],
+        [
+          "calendar.google.com",
+          2
+        ],
+        [
+          "linkedin.com",
+          2
+        ],
+        [
+          "chatgpt.com",
+          2
+        ]
+      ]
+    },
+    "cleanup_notes": [
+      "Source CSV was kept unchanged; this file is a derived normalized artifact.",
+      "Redirect-like domains such as t.co are retained in raw events but domain-normalized when they clearly point to YouTube content.",
+      "Repeated identical entries are removed only when time, title, and normalized domain all match exactly.",
+      "Merged sessions are intended as higher-level evidence, not final labels."
+    ],
+    "raw_events_normalized": [
+      {
+        "event_id": 152,
+        "start": "12:49",
+        "end": "12:50",
+        "duration_minutes": 1,
+        "title": "Google Calendar",
+        "domain": "calendar.google.com",
+        "raw_domain": "calendar.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 154,
+        "start": "12:50",
+        "end": "12:50",
+        "duration_minutes": 0,
+        "title": "Feed | LinkedIn",
+        "domain": "linkedin.com",
+        "raw_domain": "linkedin.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": true,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 153,
+        "start": "12:50",
+        "end": "12:50",
+        "duration_minutes": 0,
+        "title": "Notifications | LinkedIn",
+        "domain": "linkedin.com",
+        "raw_domain": "linkedin.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": true,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 151,
+        "start": "12:50",
+        "end": "12:51",
+        "duration_minutes": 1,
+        "title": "Gmail inbox",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 150,
+        "start": "12:52",
+        "end": "12:52",
+        "duration_minutes": 0,
+        "title": "переводчик - Поиск в Google",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 145,
+        "start": "12:52",
+        "end": "13:02",
+        "duration_minutes": 10,
+        "title": "Home / X",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 141,
+        "start": "12:52",
+        "end": "13:08",
+        "duration_minutes": 16,
+        "title": "YouTube",
+        "domain": "youtube.com",
+        "raw_domain": "youtube.com",
+        "is_redirect_like": false,
+        "is_video": true,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 149,
+        "start": "12:53",
+        "end": "12:53",
+        "duration_minutes": 0,
+        "title": "X post",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 144,
+        "start": "12:55",
+        "end": "13:03",
+        "duration_minutes": 8,
+        "title": "No Title",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 148,
+        "start": "12:58",
+        "end": "12:58",
+        "duration_minutes": 0,
+        "title": "X post",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 147,
+        "start": "12:59",
+        "end": "12:59",
+        "duration_minutes": 0,
+        "title": "X post",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 146,
+        "start": "13:01",
+        "end": "13:01",
+        "duration_minutes": 0,
+        "title": "X post",
+        "domain": "x.com",
+        "raw_domain": "x.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": true,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 142,
+        "start": "13:08",
+        "end": "13:08",
+        "duration_minutes": 0,
+        "title": "video on YouTube",
+        "domain": "youtube.com",
+        "raw_domain": "youtube.com",
+        "is_redirect_like": false,
+        "is_video": true,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 143,
+        "start": "13:08",
+        "end": "13:08",
+        "duration_minutes": 0,
+        "title": "video on YouTube",
+        "domain": "youtube.com",
+        "raw_domain": "youtube.com",
+        "is_redirect_like": false,
+        "is_video": true,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 140,
+        "start": "13:49",
+        "end": "13:49",
+        "duration_minutes": 0,
+        "title": "Google Calendar",
+        "domain": "calendar.google.com",
+        "raw_domain": "calendar.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 139,
+        "start": "13:50",
+        "end": "13:50",
+        "duration_minutes": 0,
+        "title": "ChatGPT",
+        "domain": "chat.openai.com",
+        "raw_domain": "chat.openai.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 138,
+        "start": "13:50",
+        "end": "13:50",
+        "duration_minutes": 0,
+        "title": "ChatGPT",
+        "domain": "chatgpt.com",
+        "raw_domain": "chatgpt.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 137,
+        "start": "13:50",
+        "end": "13:50",
+        "duration_minutes": 0,
+        "title": "Egg Donation Medications Guide",
+        "domain": "chatgpt.com",
+        "raw_domain": "chatgpt.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 136,
+        "start": "13:54",
+        "end": "13:54",
+        "duration_minutes": 0,
+        "title": "Gmail inbox",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 135,
+        "start": "14:13",
+        "end": "14:13",
+        "duration_minutes": 0,
+        "title": "ohss - Поиск в Google",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 129,
+        "start": "14:13",
+        "end": "14:35",
+        "duration_minutes": 22,
+        "title": "переводчик - Поиск в Google",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 134,
+        "start": "14:14",
+        "end": "14:14",
+        "duration_minutes": 0,
+        "title": "medications with lower risk of ohss - Поиск в Google",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 132,
+        "start": "14:20",
+        "end": "14:20",
+        "duration_minutes": 0,
+        "title": "Head pose estimate, Kalman & vertigo - Elevated diastolic blood pressure and vertigo - Claude",
+        "domain": "claude.ai",
+        "raw_domain": "claude.ai",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 133,
+        "start": "14:20",
+        "end": "14:20",
+        "duration_minutes": 0,
+        "title": "New chat - Claude",
+        "domain": "claude.ai",
+        "raw_domain": "claude.ai",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 131,
+        "start": "14:20",
+        "end": "14:20",
+        "duration_minutes": 0,
+        "title": "people w blog - through niche blogs - Claude",
+        "domain": "claude.ai",
+        "raw_domain": "claude.ai",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": true,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 130,
+        "start": "14:24",
+        "end": "14:24",
+        "duration_minutes": 0,
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 127,
+        "start": "14:51",
+        "end": "14:51",
+        "duration_minutes": 0,
+        "title": "map destination",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 128,
+        "start": "14:51",
+        "end": "14:51",
+        "duration_minutes": 0,
+        "title": "map destination",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 116,
+        "start": "14:51",
+        "end": "15:20",
+        "duration_minutes": 29,
+        "title": "Google Maps",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 117,
+        "start": "14:51",
+        "end": "15:20",
+        "duration_minutes": 29,
+        "title": "map route",
+        "domain": "google.com",
+        "raw_domain": "google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 126,
+        "start": "15:12",
+        "end": "15:12",
+        "duration_minutes": 0,
+        "title": "Gmail message",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 122,
+        "start": "15:12",
+        "end": "15:15",
+        "duration_minutes": 3,
+        "title": "Sent email",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 118,
+        "start": "15:12",
+        "end": "15:19",
+        "duration_minutes": 7,
+        "title": "Gmail inbox",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 124,
+        "start": "15:14",
+        "end": "15:14",
+        "duration_minutes": 0,
+        "title": "Gmail message",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 125,
+        "start": "15:14",
+        "end": "15:14",
+        "duration_minutes": 0,
+        "title": "Drafts folder",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      },
+      {
+        "event_id": 119,
+        "start": "15:14",
+        "end": "15:18",
+        "duration_minutes": 4,
+        "title": "Spam folder",
+        "domain": "mail.google.com",
+        "raw_domain": "mail.google.com",
+        "is_redirect_like": false,
+        "is_video": false,
+        "is_social": false,
+        "is_job_related": false,
+        "is_llm_related": false,
+        "is_reading_or_research": false
+      }
+    ],
+    "merged_sessions": [
+      {
+        "session_id": 2,
+        "start": "12:49",
+        "end": "13:08",
+        "duration_minutes": 19,
+        "primary_domain": "x.com",
+        "domains": [
+          "calendar.google.com",
+          "google.com",
+          "linkedin.com",
+          "mail.google.com",
+          "x.com",
+          "youtube.com"
+        ],
+        "raw_event_count": 14,
+        "title_samples": [
+          "Google Calendar",
+          "Feed | LinkedIn",
+          "Notifications | LinkedIn",
+          "Gmail inbox",
+          "переводчик - Поиск в Google",
+          "Home / X"
+        ],
+        "session_hints": {
+          "contains_social": true,
+          "contains_video": true,
+          "contains_job_related": true,
+          "contains_llm_related": true,
+          "contains_research_reading": false
+        }
+      },
+      {
+        "session_id": 3,
+        "start": "13:49",
+        "end": "13:50",
+        "duration_minutes": 1,
+        "primary_domain": "chatgpt.com",
+        "domains": [
+          "calendar.google.com",
+          "chat.openai.com",
+          "chatgpt.com"
+        ],
+        "raw_event_count": 4,
+        "title_samples": [
+          "Google Calendar",
+          "ChatGPT",
+          "ChatGPT",
+          "Egg Donation Medications Guide"
+        ],
+        "session_hints": {
+          "contains_social": false,
+          "contains_video": false,
+          "contains_job_related": false,
+          "contains_llm_related": true,
+          "contains_research_reading": false
+        }
+      },
+      {
+        "session_id": 4,
+        "start": "13:54",
+        "end": "13:54",
+        "duration_minutes": 0,
+        "primary_domain": "mail.google.com",
+        "domains": [
+          "mail.google.com"
+        ],
+        "raw_event_count": 1,
+        "title_samples": [
+          "Gmail inbox"
+        ],
+        "session_hints": {
+          "contains_social": false,
+          "contains_video": false,
+          "contains_job_related": false,
+          "contains_llm_related": false,
+          "contains_research_reading": false
+        }
+      },
+      {
+        "session_id": 5,
+        "start": "14:13",
+        "end": "14:35",
+        "duration_minutes": 22,
+        "primary_domain": "google.com",
+        "domains": [
+          "claude.ai",
+          "google.com",
+          "ivysurrogacy.com"
+        ],
+        "raw_event_count": 7,
+        "title_samples": [
+          "ohss - Поиск в Google",
+          "переводчик - Поиск в Google",
+          "medications with lower risk of ohss - Поиск в Google",
+          "Head pose estimate, Kalman & vertigo - Elevated diastolic blood pressure and vertigo - Claude",
+          "New chat - Claude",
+          "eggs donation; Mining smart people w blog - through niche blogs - Claude"
+        ],
+        "session_hints": {
+          "contains_social": false,
+          "contains_video": false,
+          "contains_job_related": false,
+          "contains_llm_related": true,
+          "contains_research_reading": false
+        }
+      },
+      {
+        "session_id": 6,
+        "start": "14:51",
+        "end": "15:20",
+        "duration_minutes": 29,
+        "primary_domain": "mail.google.com",
+        "domains": [
+          "google.com",
+          "mail.google.com"
+        ],
+        "raw_event_count": 13,
+        "title_samples": [
+          "map destination",
+          "map destination",
+          "Google Maps",
+          "map route",
+          "Gmail message",
+          "Sent email"
+        ],
+        "session_hints": {
+          "contains_social": false,
+          "contains_video": false,
+          "contains_job_related": false,
+          "contains_llm_related": false,
+          "contains_research_reading": false
+        }
+      }
+    ]
+  }
+}
