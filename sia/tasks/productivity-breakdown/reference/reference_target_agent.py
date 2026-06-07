@@ -215,6 +215,8 @@ def build_segments_from_slots(slots: list[dict[str, str]]) -> list[dict[str, str
 
 def parse_response_json(raw_text: str) -> dict[str, Any]:
     raw_text = raw_text.strip()
+    if not raw_text:
+        raise ValueError("Model returned an empty response; expected JSON with slots_15m and segments.")
     if raw_text.startswith("```"):
         raw_text = raw_text.strip("`")
         if raw_text.startswith("json"):

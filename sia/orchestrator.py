@@ -579,6 +579,11 @@ def _run_feedback_agent(
     else:
         agent_file = os.path.join(gen_dir, Names.TARGET_AGENT)
 
+    if not os.path.exists(agent_file):
+        raise FileNotFoundError(
+            f"Cannot run feedback agent for generation {current_gen}: current agent file is missing: {agent_file}"
+        )
+
     agent_py = Path(agent_file).read_text(encoding="utf-8")
     task = Path(dataset_dir, "task.md").read_text(encoding="utf-8")
 
@@ -629,6 +634,12 @@ def _run_feedback_agent(
     )
 
     next_gen = current_gen + 1
+    expected_next_agent = os.path.join(next_gen_dir, Names.TRAIN_SCRIPT if focus == "weights" else Names.TARGET_AGENT)
+    if not os.path.exists(expected_next_agent):
+        raise FileNotFoundError(
+            f"Feedback agent did not create the expected next-generation file: {expected_next_agent}"
+        )
+
     logger.info(f"Feedback agent completed. Created improved agent for generation {next_gen}")
 
 
@@ -714,6 +725,11 @@ def run_generation(
 
     # Run feedback agent (if not the last generation)
     if current_gen < max_gen:
+        if not os.path.exists(target_agent_path):
+            raise FileNotFoundError(
+                f"Generation {current_gen} cannot continue to feedback because the current agent file is missing: {target_agent_path}"
+            )
+
         logger.info(f"Running feedback agent for generation {current_gen}")
         logger.info("Loading agent execution log...")
 
