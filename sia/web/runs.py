@@ -104,6 +104,7 @@ class GenerationDetail(BaseModel):
     artifacts: list[str] = []
     trajectories: list[int] = []
     has_openhands: bool = False
+    has_submission: bool = False
 
 
 class RunDetail(BaseModel):
@@ -310,6 +311,7 @@ def _generation_detail(gen_dir: Path, index: int) -> GenerationDetail:
         artifacts=artifacts,
         trajectories=_trajectory_ids(gen_dir),
         has_openhands=(gen_dir / "openhands_trajectory").is_dir(),
+        has_submission=_submission_path(gen_dir) is not None,
     )
 
 
@@ -371,6 +373,42 @@ def get_artifact_text(runs_root: Path, run_name: str, gen_name: str, label: str)
         return None
 
     return _read_text(gen_dir / fname)
+
+
+def get_submission(runs_root: Path, run_name: str, gen_name: str) -> dict[str, Any] | None:
+    gen_dir = _resolve_gen(runs_root, run_name, gen_name)
+    if gen_dir is None:
+        return None
+    path = _submission_path(gen_dir)
+    data = _read_json(path) if path else None
+    return data if isinstance(data, dict) else None
+
+
+def get_best_submission(runs_root: Path) -> dict[str, Any] | None:
+    if not runs_root.is_dir():
+        return None
+    best: tuple[float, int, int] | None = None
+    best_payload: dict[str, Any] | None = None
+    for run in list_runs(runs_root):
+        run_dir = runs_root / run.name
+        for gen in _generation_detail_list(run_dir):
+            payload = get_submission(runs_root, run.name, gen.name)
+            if not payload:
+                continue
+            if not isinstance(payload.get("slots_15m"), list) and not isinstance(payload.get("segments"), list):
+                continue
+            score = gen.eval.accuracy_percent if gen.eval and gen.eval.accuracy_percent is not None else -1.0
+            rank = (score, run.index, gen.index)
+            if best is None or rank > best:
+                best = rank
+                best_payload = {
+                    "run_name": run.name,
+                    "gen_name": gen.name,
+                    "task": run.task,
+                    "accuracy_percent": score if score >= 0 else None,
+                    "submission": payload,
+                }
+    return best_payload
 
 
 def get_trajectory(runs_root: Path, run_name: str, gen_name: str, qid: int) -> list[dict[str, str]] | None:
@@ -473,6 +511,21 @@ def _resolve_gen(runs_root: Path, run_name: str, gen_name: str) -> Path | None:
     if gen_dir is None or not _GEN_DIR_RE.match(gen_name) or not gen_dir.is_dir():
         return None
     return gen_dir
+
+
+def _submission_path(gen_dir: Path) -> Path | None:
+    candidates = (
+        gen_dir / "results" / "submission.json",
+        gen_dir / "submission.json",
+    )
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def _generation_detail_list(run_dir: Path) -> list[GenerationDetail]:
+    return [_generation_detail(gen_dir, gi) for gi, gen_dir in _gen_dirs(run_dir)]
 
 
 def _as_int(value: str | None) -> int | None:

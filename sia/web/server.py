@@ -35,6 +35,13 @@ def create_app(runs_dir: str | Path):
     def api_runs():
         return runs_data.list_runs(runs_root)
 
+    @app.get("/api/best-guess")
+    def api_best_guess():
+        best = runs_data.get_best_submission(runs_root)
+        if best is None:
+            raise HTTPException(status_code=404, detail="No submission.json found in runs")
+        return best
+
     @app.get("/api/runs/{run_name}")
     def api_run(run_name: str):
         detail = runs_data.get_run(runs_root, run_name)
@@ -48,6 +55,13 @@ def create_app(runs_dir: str | Path):
         if details is None:
             raise HTTPException(status_code=404, detail="No evaluation details found")
         return details
+
+    @app.get("/api/runs/{run_name}/gens/{gen_name}/submission")
+    def api_submission(run_name: str, gen_name: str):
+        submission = runs_data.get_submission(runs_root, run_name, gen_name)
+        if submission is None:
+            raise HTTPException(status_code=404, detail="No submission found")
+        return submission
 
     @app.get("/api/runs/{run_name}/gens/{gen_name}/artifact/{label}", response_class=PlainTextResponse)
     def api_artifact(run_name: str, gen_name: str, label: str):
