@@ -5,6 +5,8 @@
 
 This repo is a self-improving personalized productivity system.
 
+**Live demo:** [hindsight.it.com](https://hindsight.it.com/)
+
 Its purpose is to turn messy personal activity traces into a useful, structured understanding of how time was actually spent, what the user was trying to do, and how that behavior can be interpreted more accurately over time.
 
 The system works across multiple weak signals, including:
