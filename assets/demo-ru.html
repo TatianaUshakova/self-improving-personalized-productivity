@@ -1,0 +1,74 @@
+<title>10 июля 2026 — разбор (из блоков)</title>
+<style>
+  :root { --paper:#f2f3f1; --ink:#191c1a; --soft:#4d534f; --faint:#858c87; --rule:#d6dad5; --card:#fcfdfc;
+    --green:#2e6b46; --amber:#a1720f; --red:#b23327; --rest:#5c6b7d; --health:#8a4f6d; --sleep:#8a4f6d; --transit:#7d7a6a;
+    --serif:Georgia,"Times New Roman",serif; --sans:ui-sans-serif,-apple-system,"Helvetica Neue",Arial,sans-serif; }
+  @media (prefers-color-scheme:dark) { :root { --paper:#15171a; --ink:#e7eae6; --soft:#adb5ae; --faint:#79817a;
+    --rule:#2d3230; --card:#1d2023; --green:#7cbb92; --amber:#d9a83f; --red:#e0705f; --rest:#93a7bd; --health:#c98bad; --sleep:#c98bad; --transit:#b3ae97; } }
+  :root[data-theme="light"] { --paper:#f2f3f1; --ink:#191c1a; --soft:#4d534f; --faint:#858c87; --rule:#d6dad5; --card:#fcfdfc;
+    --green:#2e6b46; --amber:#a1720f; --red:#b23327; --rest:#5c6b7d; --health:#8a4f6d; --sleep:#8a4f6d; --transit:#7d7a6a; }
+  :root[data-theme="dark"] { --paper:#15171a; --ink:#e7eae6; --soft:#adb5ae; --faint:#79817a; --rule:#2d3230; --card:#1d2023;
+    --green:#7cbb92; --amber:#d9a83f; --red:#e0705f; --rest:#93a7bd; --health:#c98bad; --sleep:#c98bad; --transit:#b3ae97; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:820px; margin:0 auto; padding:3.4rem 1.4rem 5rem; }
+  h1 { font-size:clamp(1.9rem,5vw,2.7rem); margin:0 0 .2rem; font-weight:600; letter-spacing:-.01em; }
+  .sub { font-family:var(--sans); font-size:.8rem; color:var(--faint); margin:0 0 1.8rem; }
+  .bar { display:flex; height:26px; border-radius:7px; overflow:hidden; border:1px solid var(--rule); }
+  .bar div { height:100%; }
+  .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; margin:.7rem 0 2.2rem; font-family:var(--sans); font-size:.78rem; color:var(--soft); }
+  .legend span { display:inline-flex; align-items:center; gap:.4rem; }
+  .sw { width:10px; height:10px; border-radius:3px; flex:none; }
+  .legend b { color:var(--ink); font-variant-numeric:tabular-nums; }
+  .row { display:grid; grid-template-columns:104px 1fr; gap:1rem; margin-bottom:.5rem; }
+  .row .t { font-family:var(--sans); font-size:.78rem; font-weight:600; font-variant-numeric:tabular-nums; text-align:right; padding-top:.7rem; color:var(--soft); white-space:nowrap; }
+  .row .t .dur { display:block; font-weight:400; font-size:.68rem; color:var(--faint); }
+  .row .c { background:var(--card); border:1px solid var(--rule); border-left:4px solid var(--vc); border-radius:8px; padding:.6rem .9rem; }
+  .verdict { font-family:var(--sans); font-size:.6rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--vc); }
+  .row h3 { font-size:1rem; margin:.15rem 0 .2rem; font-weight:600; line-height:1.3; }
+  .note { font-family:var(--sans); font-size:.82rem; color:var(--soft); margin:0; }
+  .foot { margin-top:2.5rem; font-family:var(--sans); font-size:.72rem; color:var(--faint); border-top:1px solid var(--rule); padding-top:1rem; }
+</style>
+<div class="wrap">
+  <h1>10 июля 2026</h1>
+  <p class="sub">Структурный разбор из исправленных блоков · 24.9 ч учтено · 17 блоков</p>
+  <div class="bar"><div style="width:34.6%;background:var(--green)" title="продуктивно 8.6 ч"></div><div style="width:18.4%;background:var(--amber)" title="полупродуктивно 4.6 ч"></div><div style="width:1.7%;background:var(--red)" title="впустую 26 м"></div><div style="width:28.4%;background:var(--sleep)" title="сон 7.0 ч"></div><div style="width:10.1%;background:var(--rest)" title="отдых 2.5 ч"></div><div style="width:6.8%;background:var(--transit)" title="дорога 1.7 ч"></div></div>
+  <div class="legend"><span><span class="sw" style="background:var(--green)"></span> продуктивно · <b>8.6 ч</b></span><span><span class="sw" style="background:var(--amber)"></span> полупродуктивно · <b>4.6 ч</b></span><span><span class="sw" style="background:var(--red)"></span> впустую · <b>26 м</b></span><span><span class="sw" style="background:var(--sleep)"></span> сон · <b>7.0 ч</b></span><span><span class="sw" style="background:var(--rest)"></span> отдых · <b>2.5 ч</b></span><span><span class="sw" style="background:var(--transit)"></span> дорога · <b>1.7 ч</b></span></div>
+  <div class="row"><div class="t">00:05–00:58<span class="dur">53 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>MuJoCo: интерактивная демка манипуляции (lerobot/ik_pick)</h3><p class="note">Содержательно продуктивно.</p></div></div><div class="row"><div class="t">00:58–08:01<span class="dur">423 м</span></div>
+      <div class="c" style="--vc:var(--sleep)"><span class="verdict">сон</span>
+        <h3>Сон ~7ч</h3><p class="note">Без ночного пробуждения.</p></div></div><div class="row"><div class="t">08:01–08:37<span class="dur">36 м</span></div>
+      <div class="c" style="--vc:var(--amber)"><span class="verdict">полупродуктивно</span>
+        <h3>Подъём: почта, todo, спека experiments.md</h3><p class="note">Спека публичных артефактов.</p></div></div><div class="row"><div class="t">08:37–09:22<span class="dur">45 м</span></div>
+      <div class="c" style="--vc:var(--amber)"><span class="verdict">полупродуктивно</span>
+        <h3>Обсуждение дизайна: голосовой ввод, приватность данных</h3><p class="note">Выбор схемы захвата голоса и границ приватности перед реализацией.</p></div></div><div class="row"><div class="t">09:22–11:47<span class="dur">145 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Инфраструктура: рефактор пайплайна + дизайн voice-системы</h3><p class="note">Результат закоммичен в тот же день.</p></div></div><div class="row"><div class="t">11:47–12:04<span class="dur">17 м</span></div>
+      <div class="c" style="--vc:var(--amber)"><span class="verdict">полупродуктивно</span>
+        <h3>Прослушивание тестовых записей, LinkedIn</h3></div></div><div class="row"><div class="t">12:04–12:50<span class="dur">46 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Voice: тесты моделей распознавания (en/ru, наушники)</h3><p class="note">Осознанный стоп: accent-модель отложена.</p></div></div><div class="row"><div class="t">12:50–14:31<span class="dur">101 м</span></div>
+      <div class="c" style="--vc:var(--transit)"><span class="verdict">дорога</span>
+        <h3>Выход из дома (продукты)</h3><p class="note">Гипотеза по маршруту; Maps не доказывает пункт назначения.</p></div></div><div class="row"><div class="t">14:31–15:44<span class="dur">73 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Робототехника: vision-пайплайн (DINO/SAM), настройка autoresearch</h3><p class="note">Подобрала и связала детекторы под конкретную цель: работа на реальном железе.</p></div></div><div class="row"><div class="t">15:44–17:02<span class="dur">78 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Autoresearch: разбор прогонов, правка симулятора</h3><p class="note">Заметила неверную модель руки в прогоне и поправила конфиг; проверяю вывод, а не принимаю на веру.</p></div></div><div class="row"><div class="t">17:02–18:00<span class="dur">58 м</span></div>
+      <div class="c" style="--vc:var(--rest)"><span class="verdict">отдых</span>
+        <h3>Перерыв (ужин/отдых?)</h3><p class="note">Час без событий, вероятно не за экраном.</p></div></div><div class="row"><div class="t">18:00–18:49<span class="dur">49 м</span></div>
+      <div class="c" style="--vc:var(--amber)"><span class="verdict">полупродуктивно</span>
+        <h3>Чтение своих разборов + заметка 'анализ потраченного времени'</h3><p class="note">Административный дедлайн мелькнул в почте; фоновое давление.</p></div></div><div class="row"><div class="t">18:49–19:18<span class="dur">29 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Чистка vision-репо для GitHub, запуск writeup в Overleaf</h3></div></div><div class="row"><div class="t">19:18–20:50<span class="dur">92 м</span></div>
+      <div class="c" style="--vc:var(--green)"><span class="verdict">продуктивно</span>
+        <h3>Чтение и конспект статьи Large-Batch Training</h3><p class="note">Пересказ своими словами в Obsidian.</p></div></div><div class="row"><div class="t">20:50–22:57<span class="dur">127 м</span></div>
+      <div class="c" style="--vc:var(--amber)"><span class="verdict">полупродуктивно</span>
+        <h3>Ночной админ: разбор задач, ретро дня, планирование</h3><p class="note">Разбор задач и планирование — не прокрастинация, а админ-работа.</p></div></div><div class="row"><div class="t">22:57–00:30<span class="dur">93 м</span></div>
+      <div class="c" style="--vc:var(--rest)"><span class="verdict">отдых</span>
+        <h3>Пауза, вероятно не за ноутбуком</h3><p class="note">Пустой интервал по правилу плотности: не экранное время.</p></div></div><div class="row"><div class="t">00:30–00:56<span class="dur">26 м</span></div>
+      <div class="c" style="--vc:var(--red)"><span class="verdict">впустую</span>
+        <h3>Плотные шортсы</h3><p class="note">Единственный плотный дрейф суток.</p></div></div>
+  <p class="foot">Сгенерировано build_razbor.py из 2026-07-10_final_blocks.json. Тезис, «сбои дня» и
+  «что сработало» — в 2026-07-10_auto_analysis.html (пишет LLM). Здесь — надёжная фактическая хронология.</p>
+</div>
